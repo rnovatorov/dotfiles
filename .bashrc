@@ -8,6 +8,9 @@
 # Add ~/bin to PATH
 export PATH=${PATH}:~/bin
 
+# Export ssh-agent socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # Set color prompt
 PS1='\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]$ '
 
