@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Set vim as editor
+export EDITOR=vim
+export VISUAL=vim
+
 # Add ~/bin to PATH
 export PATH=${PATH}:~/bin
 
