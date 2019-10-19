@@ -32,7 +32,6 @@ touchpad off
 
 # syncronize clipboards
 autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
 
 # start wm
 exec i3
