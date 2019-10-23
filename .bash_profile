@@ -1,7 +1,3 @@
-#
-# ~/.bash_profile
-#
-
 # Set vim as editor
 export EDITOR=vim
 export VISUAL=vim
