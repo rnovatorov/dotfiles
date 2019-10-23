@@ -1,6 +1,5 @@
 # Set vim as editor
 export EDITOR=vim
-export VISUAL=vim
 
 # Add ~/bin to PATH
 export PATH=${PATH}:~/bin
