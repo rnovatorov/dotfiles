@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+device="SynPS/2 Synaptics TouchPad"
+
+function switch_on() {
+	xinput --enable "$device"
+}
+
+function switch_off() {
+	xinput --disable "$device"
+}
+
+function get_state() {
+	xinput --list-props "$device" \
+	| grep "Device Enabled" \
+	| awk '{print $NF}'
+}
+
+function toggle() {
+	if [[ $(get_state) == "1" ]]; then
+		switch_off
+	else
+		switch_on
+	fi
+}
+
+case $1 in
+on)
+	switch_on
+	;;
+off)      
+	switch_off
+	;;
+toggle)
+	toggle
+	;;
+*)
+	get_state
+	;;
+esac
