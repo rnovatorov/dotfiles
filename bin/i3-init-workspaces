@@ -1,0 +1,12 @@
+#!/bin/bash
+
+WORKSPACES="${1:-$HOME/.config/i3/workspaces}"
+
+function init() {
+    i3-msg "workspace $(basename "$1"); append_layout $1/layout.json"
+    "$1"/fill.sh
+}
+
+for ws in "$WORKSPACES"/*; do
+    init "$ws";
+done

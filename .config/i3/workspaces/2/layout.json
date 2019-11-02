@@ -1,0 +1,40 @@
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 728,
+       "width": 1362,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Mozilla Firefox",
+    "percent": 0.7,
+    "swallows": [
+       {
+          "class": "^firefox$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 960,
+       "width": 1280,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Alacritty",
+    "percent": 0.3,
+    "swallows": [
+       {
+          "class": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+}
+
