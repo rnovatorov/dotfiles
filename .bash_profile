@@ -1,3 +1,6 @@
+# Set alacritty as terminal
+export TERMINAL=alacritty
+
 # Set vim as editor
 export EDITOR=vim
 

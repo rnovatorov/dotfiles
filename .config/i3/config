@@ -32,7 +32,7 @@ set $right semicolon
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec --no-startup-id terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # Kill focused window
 bindsym $mod+Shift+q kill
