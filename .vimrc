@@ -28,3 +28,10 @@ noremap j h
 
 " Use `kl` to enter command mode
 inoremap kl <ESC>
+
+" Navigate windows with `jkl;`
+nnoremap <C-w>h <C-w>;
+nnoremap <C-w>; <C-w>l
+nnoremap <C-w>l <C-w>k
+nnoremap <C-w>k <C-w>j
+nnoremap <C-w>j <C-w>h
