@@ -19,7 +19,8 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 
-" Shift motion keys to the home row
+" Set `jkl;` as a homerow
+noremap h ;
 noremap ; l
 noremap l k
 noremap k j
