@@ -173,10 +173,10 @@ set $color-15	#c5c8c6
 
 # Set window colors
 # class			border		background	text		indicator
-client.focused		$color-8	$color-8	$color-fg	$color-bg
+client.focused		$color-12	$color-4	$color-fg	$color-bg
 client.focused_inactive	$color-0	$color-0	$color-fg	$color-bg
-client.unfocused	$color-0	$color-0	$color-fg	$color-bg
-client.urgent		$color-0	$color-1	$color-fg	$color-bg
+client.unfocused	$color-8	$color-0	$color-fg	$color-bg
+client.urgent		$color-9	$color-1	$color-fg	$color-bg
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -189,9 +189,9 @@ bar {
 		separator	$color-fg
 
 		# class			border		background	text 
-                focused_workspace	$color-bg	$color-8	$color-fg
+                focused_workspace	$color-12	$color-4	$color-fg
                 active_workspace	$color-bg	$color-8	$color-fg
-                inactive_workspace	$color-bg	$color-0	$color-fg
-                urgent_workspace	$color-bg	$color-1	$color-fg
+                inactive_workspace	$color-8	$color-0	$color-fg
+                urgent_workspace	$color-9	$color-1	$color-fg
         }
 }
