@@ -12,7 +12,7 @@ fi
 touchpad off
 
 # syncronize clipboards
-autocutsel -fork &
+parcellite --no-icon &
 
 # start wm
 exec i3
