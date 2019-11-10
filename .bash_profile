@@ -1,8 +1,8 @@
 # Set alacritty as terminal
 export TERMINAL=alacritty
 
-# Set vim as editor
-export EDITOR=vim
+# Set nvim as editor
+export EDITOR=nvim
 
 # Add ~/bin to PATH
 export PATH=${PATH}:~/bin
