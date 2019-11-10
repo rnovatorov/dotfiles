@@ -1,8 +1,6 @@
 set showmode
 set number
 set clipboard=unnamedplus
-set ignorecase
-set smartcase
 
 " Enable support for russian keyboard layout
 set spelllang=ru_yo,en_us
