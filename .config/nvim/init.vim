@@ -1,5 +1,10 @@
+" Show the active mode
 set showmode
+
+" Enable line numbering
 set number
+
+" Use system clipboard
 set clipboard=unnamedplus
 
 " Enable support for russian keyboard layout
@@ -8,6 +13,7 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 
+" Set map leader
 let mapleader = " "
 
 " Set `jkl;` as a homerow
