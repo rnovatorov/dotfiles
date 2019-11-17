@@ -7,6 +7,11 @@ set number
 " Use system clipboard
 set clipboard=unnamedplus
 
+" Disable backup and swapfile
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Set short interval for `CursorHold` autocommand event
 set updatetime=100
 
