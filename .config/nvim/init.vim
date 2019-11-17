@@ -7,6 +7,9 @@ set number
 " Use system clipboard
 set clipboard=unnamedplus
 
+" Set short interval for `CursorHold` autocommand event
+set updatetime=100
+
 " Enable support for russian keyboard layout
 set spelllang=ru_yo,en_us
 set keymap=russian-jcukenwin
