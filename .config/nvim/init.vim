@@ -22,7 +22,7 @@ set iminsert=0
 set imsearch=0
 
 " Set map leader
-let mapleader = " "
+let mapleader = ","
 
 " Set `jkl;` as a homerow
 noremap h ;
@@ -41,19 +41,23 @@ nnoremap <C-w>l <C-w>k
 nnoremap <C-w>k <C-w>j
 nnoremap <C-w>j <C-w>h
 
+" Bash-like keys for command line
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
 " Plugins
 call plug#begin()
 
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdcommenter'
+Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
 
 call plug#end()
 
-" Toggle NERDTree
-noremap <Leader>t :NERDTreeToggle<CR>
-
-" Run `fzf`
-noremap <Leader>f :FZF<CR>
+" NERDTree mappings
+noremap <Leader>nt :NERDTreeToggle<CR>
+noremap <Leader>nf :NERDTreeFind<CR>
