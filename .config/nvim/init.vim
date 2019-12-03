@@ -1,6 +1,18 @@
 " Show the active mode
 set showmode
 
+" Hide buffers when they are abandoned
+set hidden
+
+" Better display for messages
+set cmdheight=2
+
+" Short interval for CursorHold event
+set updatetime=300
+
+" Don't give |ins-completion-menu| messages
+set shortmess+=c
+
 " Enable line numbering
 set number
 
@@ -12,8 +24,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Set short interval for `CursorHold` autocommand event
-set updatetime=100
+" Natural splits
+set splitright
+set splitbelow
 
 " Enable support for russian keyboard layout
 set spelllang=ru_yo,en_us
@@ -51,13 +64,20 @@ call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
-Plug 'dense-analysis/ale'
-Plug 'fatih/vim-go'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 " NERDTree mappings
 noremap <Leader>nt :NERDTreeToggle<CR>
 noremap <Leader>nf :NERDTreeFind<CR>
+
+" Coc mappings
+nmap <Leader>gd <Plug>(coc-definition)
+nmap <Leader>gy <Plug>(coc-type-definition)
+nmap <Leader>gi <Plug>(coc-implementation)
+nmap <Leader>gr <Plug>(coc-references)
+nmap <Leader>rn <Plug>(coc-rename)
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
