@@ -1,20 +1,8 @@
-" Show the active mode
-set showmode
-
-" Hide buffers when they are abandoned
-set hidden
-
-" Better display for messages
-set cmdheight=2
-
-" Short interval for CursorHold event
-set updatetime=300
-
-" Don't give |ins-completion-menu| messages
-set shortmess+=c
-
 " Enable line numbering
 set number
+
+" Show the active mode
+set showmode
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -24,9 +12,21 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Natural splits
+" Split naturally
 set splitright
 set splitbelow
+
+" Hide buffers when they are abandoned
+set hidden
+
+" Enlarge display for messages
+set cmdheight=2
+
+" Shorten interval for CursorHold event
+set updatetime=300
+
+" Do not give |ins-completion-menu| messages
+set shortmess+=c
 
 " Enable support for russian keyboard layout
 set spelllang=ru_yo,en_us
@@ -54,11 +54,11 @@ nnoremap <C-w>l <C-w>k
 nnoremap <C-w>k <C-w>j
 nnoremap <C-w>j <C-w>h
 
-" Bash-like keys for command line
+" Use Bash-like keys for command line
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-" Plugins
+" List plugins
 call plug#begin()
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -68,14 +68,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-" CtrlP
+" Configure CtrlP
 let g:ctrlp_map = '<leader>ff'
 
-" NERDTree mappings
+" Configure NERDTree
 noremap <Leader>nt :NERDTreeToggle<CR>
 noremap <Leader>nf :NERDTreeFind<CR>
 
-" Coc mappings
+" Confiure Coc
 nmap <Leader>gd <Plug>(coc-definition)
 nmap <Leader>gy <Plug>(coc-type-definition)
 nmap <Leader>gi <Plug>(coc-implementation)
