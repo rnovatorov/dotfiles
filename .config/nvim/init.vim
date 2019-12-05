@@ -19,15 +19,6 @@ set splitbelow
 " Hide buffers when they are abandoned
 set hidden
 
-" Enlarge display for messages
-set cmdheight=2
-
-" Shorten interval for CursorHold event
-set updatetime=300
-
-" Do not give |ins-completion-menu| messages
-set shortmess+=c
-
 " Enable support for russian keyboard layout
 set spelllang=ru_yo,en_us
 set keymap=russian-jcukenwin
@@ -64,7 +55,7 @@ call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -75,12 +66,19 @@ let g:ctrlp_map = '<leader>ff'
 noremap <Leader>nt :NERDTreeToggle<CR>
 noremap <Leader>nf :NERDTreeFind<CR>
 
-" Confiure Coc
-nmap <Leader>gd <Plug>(coc-definition)
-nmap <Leader>gy <Plug>(coc-type-definition)
-nmap <Leader>gi <Plug>(coc-implementation)
-nmap <Leader>gr <Plug>(coc-references)
-nmap <Leader>rn <Plug>(coc-rename)
+" Confiure ALE
+noremap <Leader>gd :ALEGoToDefinition<CR>
+noremap <Leader>gy :ALEGoToTypeDefinition<CR>
+noremap <Leader>gr :ALEFindReferences<CR>
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+let g:ale_fix_on_save = 1
+
+let g:ale_linters = {
+\   'go': ['gopls'],
+\   'python': ['pyls'],
+\}
+
+let g:ale_fixers = {
+\   'go': ['goimports'],
+\   'python': ['black'],
+\}
