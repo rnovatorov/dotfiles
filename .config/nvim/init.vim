@@ -36,18 +36,18 @@ noremap k j
 noremap j h
 
 " Use `kl` to enter command mode
-inoremap kl <ESC>
+inoremap kl <Esc>
 
 " Navigate windows with `jkl;`
-nnoremap <C-w>h <C-w>;
-nnoremap <C-w>; <C-w>l
-nnoremap <C-w>l <C-w>k
-nnoremap <C-w>k <C-w>j
-nnoremap <C-w>j <C-w>h
+nnoremap <C-W>h <C-W>;
+nnoremap <C-W>; <C-W>l
+nnoremap <C-W>l <C-W>k
+nnoremap <C-W>k <C-W>j
+nnoremap <C-W>j <C-W>h
 
 " Use Bash-like keys for command line
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
 
 " List plugins
 call plug#begin()
@@ -60,16 +60,16 @@ Plug 'dense-analysis/ale'
 call plug#end()
 
 " Configure CtrlP
-let g:ctrlp_map = '<leader>ff'
+let g:ctrlp_map = '<Leader>ff'
 
 " Configure NERDTree
-noremap <Leader>nt :NERDTreeToggle<CR>
-noremap <Leader>nf :NERDTreeFind<CR>
+noremap <Leader>nt :NERDTreeToggle<Cr>
+noremap <Leader>nf :NERDTreeFind<Cr>
 
 " Confiure ALE
-noremap <Leader>gd :ALEGoToDefinition<CR>
-noremap <Leader>gy :ALEGoToTypeDefinition<CR>
-noremap <Leader>gr :ALEFindReferences<CR>
+noremap <Leader>gd :ALEGoToDefinition<Cr>
+noremap <Leader>gy :ALEGoToTypeDefinition<Cr>
+noremap <Leader>gr :ALEFindReferences<Cr>
 
 let g:ale_fix_on_save = 1
 
