@@ -68,6 +68,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
+" CtrlP
+let g:ctrlp_map = '<leader>ff'
+
 " NERDTree mappings
 noremap <Leader>nt :NERDTreeToggle<CR>
 noremap <Leader>nf :NERDTreeFind<CR>
