@@ -70,6 +70,7 @@ noremap <Leader>nf :NERDTreeFind<Cr>
 noremap <Leader>gd :ALEGoToDefinition<Cr>
 noremap <Leader>gy :ALEGoToTypeDefinition<Cr>
 noremap <Leader>gr :ALEFindReferences<Cr>
+noremap <Leader>rn :ALERename<Cr>
 
 let g:ale_fix_on_save = 1
 
