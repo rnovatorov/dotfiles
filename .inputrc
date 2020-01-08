@@ -1,0 +1,8 @@
+# Turn off beeping
+set bell-style none
+
+# Faster completion
+set show-all-if-ambiguous on
+
+# Colored completion
+set colored-stats On
