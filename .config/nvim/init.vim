@@ -25,6 +25,9 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 
+" Set CursorHold event trigger timeout
+set updatetime=100
+
 " Set map leader
 let mapleader = ","
 
@@ -56,6 +59,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
