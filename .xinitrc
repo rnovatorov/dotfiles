@@ -21,5 +21,8 @@ xss-lock --transfer-sleep-lock -- i3lock --nofork --image ~/.wallpaper &
 # set wallpaper
 feh --bg-scale ~/.wallpaper
 
+# start compositor
+picom &
+
 # start wm
 exec i3
