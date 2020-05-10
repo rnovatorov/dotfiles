@@ -18,5 +18,8 @@ parcellite --no-icon &
 # screen before suspend. `loginctl lock-session` is used to lock the screen.
 xss-lock --transfer-sleep-lock -- i3lock --nofork --image ~/.wallpaper &
 
+# set wallpaper
+feh --bg-scale ~/.wallpaper
+
 # start wm
 exec i3
