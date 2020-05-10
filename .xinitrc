@@ -14,5 +14,9 @@ touchpad off
 # syncronize clipboards
 parcellite --no-icon &
 
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. `loginctl lock-session` is used to lock the screen.
+xss-lock --transfer-sleep-lock -- i3lock --nofork --image ~/.wallpaper &
+
 # start wm
 exec i3
