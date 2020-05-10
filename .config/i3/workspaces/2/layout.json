@@ -5,14 +5,14 @@
     "geometry": {
        "height": 728,
        "width": 1362,
-       "x": 0,
-       "y": 0
+       "x": 2,
+       "y": 18
     },
-    "name": "Mozilla Firefox",
-    "percent": 0.7,
+    "name": "New Tab - Chromium",
+    "percent": 1,
     "swallows": [
        {
-          "class": "^firefox$"
+          "class": "^Chromium$"
        }
     ],
     "type": "con"
