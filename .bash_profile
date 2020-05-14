@@ -3,6 +3,7 @@ export TERMINAL=alacritty
 
 # Set nvim as editor
 export EDITOR=nvim
+export VISUAL=${EDITOR}
 
 # Add ~/bin to PATH
 export PATH=${PATH}:~/bin
