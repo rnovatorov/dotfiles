@@ -67,8 +67,8 @@ call plug#end()
 let g:ctrlp_map = '<Leader>ff'
 
 " Configure NERDTree
-noremap <Leader>nt :NERDTreeToggle<Cr>
-noremap <Leader>nf :NERDTreeFind<Cr>
+noremap <Leader>tt :NERDTreeToggle<Cr>
+noremap <Leader>tf :NERDTreeFind<Cr>
 
 " Configure GitGutter
 let g:gitgutter_map_keys = 0
