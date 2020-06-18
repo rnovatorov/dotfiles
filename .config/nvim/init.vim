@@ -70,6 +70,12 @@ let g:ctrlp_map = '<Leader>ff'
 noremap <Leader>nt :NERDTreeToggle<Cr>
 noremap <Leader>nf :NERDTreeFind<Cr>
 
+" Configure GitGutter
+let g:gitgutter_map_keys = 0
+noremap <Leader>hn :GitGutterNextHunk<Cr>
+noremap <Leader>hp :GitGutterPrevHunk<Cr>
+noremap <Leader>hu :GitGutterUndoHunk<Cr>
+
 " Confiure ALE
 noremap <Leader>gd :ALEGoToDefinition<Cr>
 noremap <Leader>gy :ALEGoToTypeDefinition<Cr>
