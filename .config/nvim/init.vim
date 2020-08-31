@@ -28,6 +28,9 @@ set imsearch=0
 " Set CursorHold event trigger timeout
 set updatetime=100
 
+" No highlighting for sign column
+highlight SignColumn none
+
 " Set map leader
 let mapleader = ","
 
