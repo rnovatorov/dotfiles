@@ -78,6 +78,7 @@ let g:gitgutter_map_keys = 0
 noremap <Leader>hn :GitGutterNextHunk<Cr>
 noremap <Leader>hp :GitGutterPrevHunk<Cr>
 noremap <Leader>hu :GitGutterUndoHunk<Cr>
+noremap <Leader>hs :GitGutterStageHunk<Cr>
 
 " Confiure ALE
 noremap <Leader>gd :ALEGoToDefinition<Cr>
