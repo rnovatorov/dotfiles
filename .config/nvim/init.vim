@@ -92,12 +92,14 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \   'python': ['pyls', 'pyflakes'],
 \   'c': ['clang', 'clangd'],
+\   'ruby': ['ruby', 'solargraph'],
 \}
 
 let g:ale_fixers = {
 \   'go': ['goimports'],
 \   'python': ['black'],
 \   'c': ['clang-format'],
+\   'ruby': ['rubocop'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
