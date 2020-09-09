@@ -89,6 +89,7 @@ noremap <Leader>rn :ALERename<Cr>
 let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
+\   'json': [],
 \   'go': ['gopls'],
 \   'python': ['pyls', 'pyflakes'],
 \   'c': ['clang', 'clangd'],
@@ -96,6 +97,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
+\   'json': ['jq'],
 \   'go': ['goimports'],
 \   'python': ['black'],
 \   'c': ['clang-format'],
