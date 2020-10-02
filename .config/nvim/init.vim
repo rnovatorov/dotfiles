@@ -28,6 +28,11 @@ set imsearch=0
 " Set CursorHold event trigger timeout
 set updatetime=100
 
+" Fix JSON, YAML and Markdown indentation
+autocmd FileType json setlocal tabstop=2 shiftwidth=0 expandtab
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=0 expandtab
+autocmd FileType markdown setlocal tabstop=2 shiftwidth=0 expandtab
+
 " No highlighting for sign column
 highlight SignColumn none
 
