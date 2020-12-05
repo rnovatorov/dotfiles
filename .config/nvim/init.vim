@@ -36,6 +36,9 @@ autocmd FileType markdown setlocal tabstop=2 shiftwidth=0 expandtab
 " No highlighting for sign column
 highlight SignColumn none
 
+" Use spaces as vertical separator fill chars
+set fillchars-=vert:\| | set fillchars+=vert:\ 
+
 " Set map leader
 let mapleader = ","
 
