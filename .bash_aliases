@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # diff
 alias diff='diff --color=auto'
 
@@ -11,6 +13,8 @@ alias ll='la -l'
 
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+source /usr/share/bash-complete-alias/complete_alias
+complete -F _complete_alias config
 
 # man
 man() {
