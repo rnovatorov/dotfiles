@@ -95,6 +95,7 @@ noremap <Leader>gr :ALEFindReferences<Cr>
 noremap <Leader>rn :ALERename<Cr>
 
 let g:ale_fix_on_save = 1
+command! ALEToggleFixOnSave execute "let g:ale_fix_on_save = g:ale_fix_on_save ? 0 : 1"
 
 let g:ale_linters = {
 \   'json': [],
