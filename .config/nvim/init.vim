@@ -99,6 +99,7 @@ command! ALEToggleFixOnSave execute "let g:ale_fix_on_save = g:ale_fix_on_save ?
 
 let g:ale_linters = {
 \   'json': [],
+\   'markdown': [],
 \   'go': ['gopls'],
 \   'python': ['pyls', 'pyflakes'],
 \   'c': ['clang', 'clangd'],
@@ -107,6 +108,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'json': ['jq'],
+\   'markdown': ['prettier'],
 \   'go': ['goimports'],
 \   'python': ['black'],
 \   'c': ['clang-format'],
