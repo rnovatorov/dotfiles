@@ -38,16 +38,18 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Screenshots
 set $screenshot_name ~/pictures/screenshot-$(date +%s).png
-set $to_clipboard xsel --input --clipboard
+set $take_screenshot maim --format png
+set $screenshot_to_clipboard xclip -selection clipboard -t image/png
 
-bindsym Print exec --no-startup-id maim $screenshot_name
-bindsym Control+Print exec --no-startup-id maim | $to_clipboard
+bindsym Print exec --no-startup-id $take_screenshot > $screenshot_name
+bindsym Control+Print exec --no-startup-id $take_screenshot | $screenshot_to_clipboard
 
-bindsym Shift+Print exec --no-startup-id maim --select $screenshot_name
-bindsym Control+Shift+Print exec --no-startup-id maim --select | $to_clipboard
+bindsym Shift+Print exec --no-startup-id $take_screenshot --select > $screenshot_name
+bindsym Control+Shift+Print exec --no-startup-id $take_screenshot --select | $screenshot_to_clipboard
 
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) $screenshot_name
-bindsym Control+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | $to_clipboard
+bindsym $mod+Print exec --no-startup-id $take_screenshot --window $(xdotool getactivewindow) > $screenshot_name
+# does not work :\
+# bindsym Control+$mod+Print exec --no-startup-id $take_screenshot --window $(xdotool getactivewindow) | $to_clipboard
 
 # Change focus
 bindsym $mod+$left focus left
