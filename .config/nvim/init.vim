@@ -36,6 +36,7 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=0 expandtab
 autocmd FileType xml setlocal tabstop=2 shiftwidth=0 expandtab
 autocmd FileType markdown setlocal tabstop=2 shiftwidth=0 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=0 expandtab
+autocmd FileType lua setlocal tabstop=4 shiftwidth=0 expandtab
 
 " No highlighting for sign column
 highlight SignColumn none
