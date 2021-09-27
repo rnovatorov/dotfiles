@@ -106,7 +106,7 @@ let g:ale_linters = {
 \   'json': [],
 \   'markdown': [],
 \   'go': ['gopls'],
-\   'python': ['pyls', 'pyflakes'],
+\   'python': ['pylsp', 'pyflakes'],
 \   'c': ['clang', 'clangd'],
 \   'ruby': ['ruby', 'solargraph'],
 \}
