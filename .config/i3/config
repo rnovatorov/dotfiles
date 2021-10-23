@@ -52,8 +52,8 @@ bindsym $mod+Print exec --no-startup-id $take_screenshot --window $(xdotool geta
 # bindsym Control+$mod+Print exec --no-startup-id $take_screenshot --window $(xdotool getactivewindow) | $to_clipboard
 
 # Dunst
-bindsym Control+space exec dunstctl close
-bindsym Control+grave exec dunstctl history-pop
+bindsym Control+space exec --no-startup-id dunstctl close
+bindsym Control+grave exec --no-startup-id dunstctl history-pop
 
 # Change focus
 bindsym $mod+$left focus left
