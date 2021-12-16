@@ -110,6 +110,7 @@ let g:ale_linters = {
 \   'c': ['clang', 'clangd'],
 \   'ruby': ['ruby'],
 \   'asm': [],
+\   'rust': ['rustc', 'rls'],
 \}
 
 let g:ale_fixers = {
@@ -120,6 +121,7 @@ let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'ruby': [],
 \   'asm': [],
+\   'rust': ['rustfmt'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
