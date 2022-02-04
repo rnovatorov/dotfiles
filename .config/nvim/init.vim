@@ -71,7 +71,7 @@ cnoremap <C-E> <End>
 " List plugins
 call plug#begin()
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
@@ -79,8 +79,8 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-" Configure CtrlP
-let g:ctrlp_map = '<Leader>ff'
+" Configure FZF
+noremap <Leader>ff :Files<Cr>
 
 " Configure NERDTree
 noremap <Leader>tt :NERDTreeToggle<Cr>
