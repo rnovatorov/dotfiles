@@ -1,0 +1,11 @@
+[Unit]
+After=network-online.target
+
+[Mount]
+Type=rclone
+What=google-drive:
+Where=/home/rnovatorov/google-drive
+Options=rw,args2env,vfs-cache-mode=full,config=/home/rnovatorov/.config/rclone/rclone.conf,cache-dir=/home/rnovatorov/.cache/rclone
+
+[Install]
+WantedBy=default.target
