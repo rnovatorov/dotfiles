@@ -111,6 +111,8 @@ let g:ale_linters = {
 \   'ruby': ['ruby'],
 \   'asm': [],
 \   'rust': ['rustc', 'rls'],
+\   'typescript': ['tsserver'],
+\   'typescriptreact': ['tsserver'],
 \}
 
 let g:ale_fixers = {
@@ -122,6 +124,8 @@ let g:ale_fixers = {
 \   'ruby': [],
 \   'asm': [],
 \   'rust': ['rustfmt'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
