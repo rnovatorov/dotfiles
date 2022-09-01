@@ -18,6 +18,7 @@ order += "volume master"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "ethernet tun0"
+order += "path_exists google-drive"
 order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 0"
@@ -46,6 +47,11 @@ ethernet _first_ {
 ethernet tun0 {
         format_up = "Tun: %ip"
         format_down = "Tun: down"
+}
+
+path_exists google-drive {
+	path = "/home/rnovatorov/google-drive/.mounted"
+        format = "%title: %status"
 }
 
 battery all {
