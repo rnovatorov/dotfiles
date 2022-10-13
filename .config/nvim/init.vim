@@ -119,7 +119,7 @@ let g:ale_fixers = {
 \   'json': ['jq'],
 \   'markdown': ['prettier'],
 \   'go': ['goimports'],
-\   'python': ['black'],
+\   'python': ['black', 'isort'],
 \   'c': ['clang-format'],
 \   'ruby': [],
 \   'asm': [],
