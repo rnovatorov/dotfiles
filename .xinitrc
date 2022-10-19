@@ -11,6 +11,9 @@ fi
 # configure DPI
 xrandr --dpi 96
 
+# configure keyboard repeat rate and delay
+xset r rate 300 50
+
 # disable touchpad
 touchpad off
 
