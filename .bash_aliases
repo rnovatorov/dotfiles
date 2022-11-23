@@ -11,6 +11,9 @@ alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='la -l'
 
+# cal
+alias cal='cal -m'
+
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 source /usr/share/bash-complete-alias/complete_alias
