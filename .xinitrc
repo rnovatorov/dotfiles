@@ -14,6 +14,9 @@ xrandr --dpi 96
 # configure keyboard repeat rate and delay
 xset r rate 300 50
 
+# set compose key
+setxkbmap -option compose:ralt
+
 # disable touchpad
 touchpad off
 
