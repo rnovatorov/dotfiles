@@ -121,7 +121,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'json': ['jq'],
 \   'markdown': ['prettier'],
-\   'go': ['goimports'],
+\   'go': ['goimports', 'gofumpt'],
 \   'python': ['black', 'isort'],
 \   'c': ['clang-format'],
 \   'ruby': [],
