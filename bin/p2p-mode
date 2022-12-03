@@ -1,0 +1,46 @@
+#!/usr/bin/bash
+
+CONN=protonvpn-nl
+IFACE=tun0
+
+function turn_on() {
+	nmcli connection up "$CONN"
+	sudo ufw allow out on "$IFACE"
+	sudo ufw default deny outgoing
+}
+
+function turn_off() {
+	sudo ufw default allow outgoing
+	sudo ufw delete allow out on "$IFACE"
+	nmcli connection down "$CONN"
+}
+
+function is_on() {
+	if ! $(sudo ufw status verbose | grep -q "deny (outgoing)"); then
+		return 1
+	fi
+	if ! $(nmcli -f GENERAL.STATE connection show "$CONN" | grep -q activated); then
+		return 1
+	fi
+	return 0
+}
+
+function get_state() {
+	if is_on; then
+		echo "on"
+	else
+		echo "off"
+	fi
+}
+
+case "${1:-}" in
+on)
+	turn_on
+	;;
+off)      
+	turn_off
+	;;
+*)
+	get_state
+	;;
+esac
