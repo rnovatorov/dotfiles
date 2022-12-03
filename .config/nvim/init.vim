@@ -28,6 +28,9 @@ set imsearch=0
 " Set CursorHold event trigger timeout
 set updatetime=100
 
+" Fix broken auto-indent of comments
+:set indentkeys-=0#
+
 " Fix indentation
 autocmd FileType proto setlocal tabstop=4 shiftwidth=0 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=0 expandtab
