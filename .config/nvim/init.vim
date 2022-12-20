@@ -116,6 +116,7 @@ let g:ale_linters = {
 \   'rust': ['rustc', 'rls'],
 \   'typescript': ['tsserver'],
 \   'typescriptreact': ['tsserver'],
+\   'lua': ['luac'],
 \}
 
 let g:ale_fixers = {
@@ -130,6 +131,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'sql': ['pgformatter'],
+\   'lua': ['lua-format'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
