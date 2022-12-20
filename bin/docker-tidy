@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+docker ps --all --quiet | \
+	xargs --max-args 1 --no-run-if-empty \
+		docker rm --force
+
+docker volume ls --quiet | \
+	xargs --max-args 1 --no-run-if-empty \
+		docker volume rm --force
+
+docker network ls | \
+	grep -v -P 'bridge +bridge' | \
+	grep -v -P 'host +host' | \
+	grep -v -P 'none +null' | \
+	tail -n +2 | \
+	awk "{ print \$1 }" | \
+	xargs --max-args 1 --no-run-if-empty \
+		docker network rm
