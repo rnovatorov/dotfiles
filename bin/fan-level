@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+case $1 in
+0)
+	;;
+auto)      
+	;;
+disengaged)
+	;;
+*)
+	echo "unexpected or missing level"
+	exit 1
+	;;
+esac
+
+echo "level $1" | sudo tee /proc/acpi/ibm/fan
