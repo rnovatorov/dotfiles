@@ -36,9 +36,11 @@ function get_state() {
 case "${1:-}" in
 on)
 	turn_on
+	get_state
 	;;
 off)      
 	turn_off
+	get_state
 	;;
 *)
 	get_state
