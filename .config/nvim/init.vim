@@ -117,6 +117,7 @@ let g:ale_linters = {
 \   'typescript': ['tsserver'],
 \   'typescriptreact': ['tsserver'],
 \   'lua': ['luac'],
+\   'proto': ['protoc-gen-lint'],
 \}
 
 let g:ale_fixers = {
