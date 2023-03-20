@@ -132,7 +132,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'sql': ['pgformatter'],
-\   'lua': ['lua-format'],
+\   'lua': ['stylua'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
