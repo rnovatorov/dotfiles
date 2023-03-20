@@ -17,5 +17,8 @@ export GOPATH=~/code/go
 # Add GOPATH/bin to PATH
 export PATH=${PATH}:${GOPATH}/bin
 
+# Set dark GTK theme
+export GTK_THEME=Adwaita:dark
+
 # Load .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
