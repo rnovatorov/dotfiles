@@ -58,6 +58,7 @@ battery all {
         format = "%status: %percentage %remaining"
         status_chr = "Chr"
         status_bat = "Bat"
+	low_threshold = 15
 }
 
 cpu_usage {
