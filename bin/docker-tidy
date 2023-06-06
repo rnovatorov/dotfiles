@@ -16,3 +16,5 @@ docker network ls | \
 	awk "{ print \$1 }" | \
 	xargs --max-args 1 --no-run-if-empty \
 		docker network rm
+
+docker system prune --force
