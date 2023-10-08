@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+gpsbabel \
+	-i gpx -f /dev/stdin \
+	-x simplify,count=50 \
+	-x transform,rte=trk,del \
+	-o gpx -F /dev/stdout
