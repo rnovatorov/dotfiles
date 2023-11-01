@@ -5,7 +5,7 @@
 PS1='\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]$ '
 
 # Larger history
-export HISTSIZE=5000
+export HISTSIZE=50000
 
 # Ignore identical commands in history
 export HISTCONTROL=ignoredups
