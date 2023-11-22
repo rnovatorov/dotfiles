@@ -3,5 +3,5 @@
 gpsbabel \
 	-i gpx -f /dev/stdin \
 	-x simplify,count=50 \
-	-x transform,rte=trk,del \
+	-x transform,rte=trk,del,rptdigits=2 \
 	-o gpx -F /dev/stdout
