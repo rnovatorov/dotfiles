@@ -97,6 +97,10 @@ noremap <Leader>hu :GitGutterUndoHunk<Cr>
 noremap <Leader>hs :GitGutterStageHunk<Cr>
 
 " Confiure ALE
+let g:ale_pattern_options = {
+\   '.*\.env$': {'ale_enabled': 0},
+\}
+
 noremap <Leader>gd :ALEGoToDefinition<Cr>
 noremap <Leader>gy :ALEGoToTypeDefinition<Cr>
 noremap <Leader>gr :ALEFindReferences<Cr>
@@ -118,6 +122,7 @@ let g:ale_linters = {
 \   'typescriptreact': ['tsserver'],
 \   'lua': ['luac'],
 \   'proto': ['protoc-gen-lint'],
+\   'sh': ['shellcheck'],
 \}
 
 let g:ale_fixers = {
