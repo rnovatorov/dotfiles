@@ -17,4 +17,6 @@ docker network ls | \
 	xargs --max-args 1 --no-run-if-empty \
 		docker network rm
 
-docker system prune --force
+if [ "${SYSTEM}" = "1" ] ; then
+	docker system prune --force
+fi
