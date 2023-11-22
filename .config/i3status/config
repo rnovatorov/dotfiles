@@ -19,7 +19,6 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "ethernet tun0"
 order += "path_exists google-drive"
-order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "cpu_temperature 1"
@@ -52,13 +51,6 @@ ethernet tun0 {
 path_exists google-drive {
 	path = "/home/rnovatorov/google-drive/.mounted"
         format = "%title: %status"
-}
-
-battery all {
-        format = "%status: %percentage %remaining"
-        status_chr = "Chr"
-        status_bat = "Bat"
-	low_threshold = 15
 }
 
 cpu_usage {

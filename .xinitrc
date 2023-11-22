@@ -33,5 +33,8 @@ feh --bg-scale ~/.wallpaper
 # start compositor
 picom &
 
+# start battery tray icon
+cbatticon --low-level 50 --critical-level 25 &
+
 # start wm
 exec i3
