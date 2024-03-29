@@ -18,8 +18,8 @@
       "percent": 0.7,
       "swallows": [
         {
-          "class": "^Editor$",
-          "instance": "^Alacritty$"
+          "class": "^Alacritty$",
+          "instance": "^Editor$"
         }
       ],
       "type": "con"
@@ -39,8 +39,8 @@
       "percent": 0.3,
       "swallows": [
         {
-          "class": "^Shell$",
-          "instance": "^Alacritty$"
+          "class": "^Alacritty$",
+          "instance": "^Shell$"
         }
       ],
       "type": "con"
