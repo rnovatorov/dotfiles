@@ -303,7 +303,7 @@
     background = "#5f819d"
     foreground = "#c5c8c6"
     frame_color = "#81a2be"
-    timeout = 10
+    timeout = 0
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
