@@ -126,6 +126,7 @@ let g:ale_linters = {
 \   'lua': ['luac'],
 \   'proto': ['protoc-gen-lint'],
 \   'sh': ['shellcheck'],
+\   'sql': [],
 \}
 
 let g:ale_fixers = {
