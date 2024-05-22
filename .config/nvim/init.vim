@@ -44,8 +44,9 @@ autocmd FileType lua setlocal tabstop=4 shiftwidth=0 expandtab
 " No highlighting for sign column
 highlight SignColumn none
 
-" Disable background color
-highlight Normal guibg=none
+" Configure colorscheme
+set notermguicolors
+colorscheme vim
 
 " Use spaces as vertical separator fill chars
 set fillchars-=vert:\| | set fillchars+=vert:\ 
