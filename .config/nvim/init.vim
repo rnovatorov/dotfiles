@@ -41,12 +41,12 @@ autocmd FileType markdown setlocal tabstop=2 shiftwidth=0 expandtab
 autocmd FileType sql setlocal tabstop=4 shiftwidth=0 expandtab
 autocmd FileType lua setlocal tabstop=4 shiftwidth=0 expandtab
 
-" No highlighting for sign column
-highlight SignColumn none
-
 " Configure colorscheme
 set notermguicolors
 colorscheme vim
+
+" No highlighting for sign column
+highlight SignColumn none
 
 " Use spaces as vertical separator fill chars
 set fillchars-=vert:\| | set fillchars+=vert:\ 
