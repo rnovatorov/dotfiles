@@ -149,3 +149,5 @@ let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
 let g:ale_c_parse_makefile = 1
 
 let g:ale_sql_pgformatter_options = "--no-extra-line --nogrouping --wrap-limit 90 --type-case 2"
+
+let g:ale_json_jq_options = "--indent 4"
