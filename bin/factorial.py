@@ -7,7 +7,7 @@ import pathlib
 import random
 import shelve
 import sys
-from typing import Callable, Optional
+from typing import Callable, List, Optional
 
 import bs4
 import requests
@@ -67,7 +67,8 @@ def login(client: "Client", cache: "Cache"):
 
 
 def delete_shifts(client: "Client", date: datetime.date):
-    for shift in client.list_shifts(date=date):
+    me = client.get_me()
+    for shift in client.list_shifts(date=date, employee_ids=[me["employee_id"]]):
         client.delete_shift(shift_id=shift["id"])
 
 
@@ -208,11 +209,15 @@ class Client:
             raise RuntimeError(response.content)
         return response.json()
 
-    def list_shifts(self, date: datetime.date):
+    def list_shifts(
+        self, date: datetime.date, employee_ids: Optional[List[int]] = None
+    ):
         params = {
             "start_on": date.isoformat(),
             "end_on": date.isoformat(),
         }
+        if employee_ids is not None:
+            params["employee_ids[]"] = employee_ids
         response = self._session.get(self._url_attendance_shifts(), params=params)
         if not response.ok:
             raise RuntimeError(response.content)
