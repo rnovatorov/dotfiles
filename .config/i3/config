@@ -213,3 +213,6 @@ bar {
                 urgent_workspace	$color-9	$color-1	$color-fg
         }
 }
+
+# Initialize workspaces
+exec i3-init-workspaces
