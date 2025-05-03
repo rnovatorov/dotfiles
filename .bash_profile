@@ -22,3 +22,8 @@ export GTK_THEME=Adwaita:dark
 
 # Load .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# Start Xorg server
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+	exec startx
+fi
