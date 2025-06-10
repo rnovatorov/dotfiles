@@ -2,4 +2,4 @@
 
 keepassxc &
 thunderbird &
-telegram-desktop &
+Telegram &
