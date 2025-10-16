@@ -143,6 +143,7 @@ let g:ale_fixers = {
 \   'typescriptreact': ['prettier'],
 \   'sql': ['pgformatter'],
 \   'lua': ['stylua'],
+\   'html': ['prettier'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
