@@ -7,7 +7,7 @@ import pathlib
 import random
 import shelve
 import sys
-from typing import Callable, List, Optional
+from typing import Any, Callable, Dict, List, Optional
 
 import bs4
 import requests
@@ -28,7 +28,7 @@ def main():
         config = ShiftsConfig(
             start_at=datetime.time(8, 30),
             start_at_variance=lambda: datetime.timedelta(
-                minutes=random.randrange(-25, 25)
+                minutes=random.randrange(-15, 15)
             ),
             shift_duration=datetime.timedelta(hours=4, minutes=5),
             shift_duration_variance=lambda: datetime.timedelta(
@@ -180,10 +180,10 @@ class Client:
         self._session.cookies.set(cookie.NAME, cookie.value)
 
     def get_me(self):
-        response = self._session.get(self._url_api_v1_me())
+        response = self._session.get(self._url_api_resources_api_public_credentials())
         if not response.ok:
             raise RuntimeError(response.json())
-        return response.json()
+        return response.json()["data"][0]
 
     def create_shift(
         self,
@@ -193,7 +193,7 @@ class Client:
         workable: Optional[bool] = None,
         time_settings_break_configuration_id: Optional[int] = None,
     ):
-        payload = {
+        payload: Dict[str, Any] = {
             "date": date.isoformat(),
             "clock_in": f"{date.isoformat()}T{clock_in.isoformat()}",
             "clock_out": f"{date.isoformat()}T{clock_out.isoformat()}",
@@ -204,7 +204,9 @@ class Client:
             payload["time_settings_break_configuration_id"] = (
                 time_settings_break_configuration_id
             )
-        response = self._session.post(self._url_attendance_shifts(), json=payload)
+        response = self._session.post(
+            self._url_api_resources_attendance_shifts(), json=payload
+        )
         if not response.ok:
             raise RuntimeError(response.content)
         return response.json()
@@ -212,19 +214,23 @@ class Client:
     def list_shifts(
         self, date: datetime.date, employee_ids: Optional[List[int]] = None
     ):
-        params = {
+        params: Dict[str, Any] = {
             "start_on": date.isoformat(),
             "end_on": date.isoformat(),
         }
         if employee_ids is not None:
             params["employee_ids[]"] = employee_ids
-        response = self._session.get(self._url_attendance_shifts(), params=params)
+        response = self._session.get(
+            self._url_api_resources_attendance_shifts(), params=params
+        )
         if not response.ok:
             raise RuntimeError(response.content)
         return response.json()["data"]
 
     def delete_shift(self, shift_id):
-        response = self._session.delete(f"{self._url_attendance_shifts()}/{shift_id}")
+        response = self._session.delete(
+            f"{self._url_api_resources_attendance_shifts()}/{shift_id}"
+        )
         if not response.ok:
             raise RuntimeError(response.content)
         return response.json()
@@ -232,7 +238,7 @@ class Client:
     def login(self, email: str, password: str):
         self._login(email, password)
         me = self.get_me()
-        if me["login_email"] != email:
+        if me["email"] != email:
             raise RuntimeError("unexpected login email")
 
     def _login(self, email: str, password: str):
@@ -257,10 +263,10 @@ class Client:
     def _url_users_sign_in(self) -> str:
         return f"{self._base_url}/de/users/sign_in"
 
-    def _url_api_v1_me(self) -> str:
-        return f"{self._base_url}/api/v1/me"
+    def _url_api_resources_api_public_credentials(self) -> str:
+        return f"{self._base_url}/api/resources/api_public/credentials"
 
-    def _url_attendance_shifts(self) -> str:
+    def _url_api_resources_attendance_shifts(self) -> str:
         return f"{self._base_url}/api/resources/attendance/shifts"
 
 
