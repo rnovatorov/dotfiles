@@ -124,7 +124,7 @@ let g:ale_linters = {
 \   'rust': ['rustc', 'rls'],
 \   'typescript': ['tsserver'],
 \   'typescriptreact': ['tsserver'],
-\   'lua': ['luac'],
+\   'lua': ['luac', 'lua-language-server'],
 \   'proto': ['protoc-gen-lint'],
 \   'sh': ['shellcheck'],
 \   'sql': [],
