@@ -3,6 +3,7 @@
 import contextlib
 import datetime
 import enum
+import getpass
 import pathlib
 import random
 import shelve
@@ -57,7 +58,7 @@ def login(client: "Client", cache: "Cache"):
 
     cookie = cache.session_cookie(email)
     if cookie is None or cookie.has_expired():
-        password = input("enter password: ")
+        password = getpass.getpass("enter password: ")
         if not password:
             raise ValueError("no password provided")
         client.login(email, password)
