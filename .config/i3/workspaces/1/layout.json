@@ -10,17 +10,17 @@
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
-               "height": 728,
-               "width": 1362,
-               "x": 2,
-               "y": 20
+                "height": 728,
+                "width": 1362,
+                "x": 2,
+                "y": 20
             },
             "name": "KeePassXC",
             "percent": 0.333333333333333,
             "swallows": [
-               {
-                  "class": "^KeePassXC$"
-               }
+                {
+                    "class": "^KeePassXC$"
+                }
             ],
             "type": "con"
         },
@@ -29,17 +29,17 @@
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
-               "height": 728,
-               "width": 1362,
-               "x": 0,
-               "y": 0
+                "height": 728,
+                "width": 1362,
+                "x": 0,
+                "y": 0
             },
             "name": "Mozilla Thunderbird",
             "percent": 0.333333333333333,
             "swallows": [
-               {
-                  "class": "^thunderbird$"
-               }
+                {
+                    "class": "^org\\.mozilla\\.Thunderbird$"
+                }
             ],
             "type": "con"
         },
@@ -48,20 +48,19 @@
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
-               "height": 728,
-               "width": 1362,
-               "x": 2,
-               "y": 18
+                "height": 728,
+                "width": 1362,
+                "x": 2,
+                "y": 18
             },
             "name": "Telegram",
             "percent": 0.333333333333333,
             "swallows": [
-               {
-                  "class": "^TelegramDesktop$"
-               }
+                {
+                    "class": "^TelegramDesktop$"
+                }
             ],
             "type": "con"
         }
     ]
 }
-
