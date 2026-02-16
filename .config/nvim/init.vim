@@ -89,6 +89,7 @@ call plug#end()
 
 " Configure FZF
 noremap <Leader>ff :Files<Cr>
+noremap <Leader>fc :Rg<Cr>
 
 " Configure NERDTree
 noremap <Leader>tt :NERDTreeToggle<Cr>
