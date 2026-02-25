@@ -6,7 +6,7 @@ export EDITOR=nvim
 export VISUAL=${EDITOR}
 
 # Add ~/bin to PATH
-export PATH=${PATH}:~/bin
+export PATH=${PATH}:~/.local/bin:~/bin
 
 # Set ssh-agent socket
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
