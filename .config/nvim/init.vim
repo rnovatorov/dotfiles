@@ -83,43 +83,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'milanglacier/minuet-ai.nvim'
 
 call plug#end()
-
-" Configure Minuet
-lua << EOF
-require('minuet').setup {
-    provider = "gemini",
-    provider_options = {
-        gemini = {
-            model = 'gemini-2.0-flash-lite',
-            api_key = 'GEMINI_API_KEY',
-            stream = true,
-            optional = {
-                generationConfig = {
-                    maxOutputTokens = 256,
-                    thinkingConfig = {
-                        thinkingBudget = 0,
-                    },
-		},
-            },
-        },
-    },
-    virtualtext = {
-        auto_trigger_ft = {},
-        keymap = {
-            accept_line = '<A-Tab>',
-            dismiss = '<Esc>',
-            next = '<A-N>',
-            prev = '<A-P>',
-        },
-    },
-}
-EOF
-noremap <Leader>aion :Minuet virtualtext enable<Cr>
-noremap <Leader>aiof :Minuet virtualtext disable<Cr>
 
 " Configure FZF
 noremap <Leader>ff :Files<Cr>
