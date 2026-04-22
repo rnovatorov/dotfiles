@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Screenshots
-set $screenshot_name ~/pictures/screenshot-$(date +%s).png
+set $screenshot_name ~/pictures/screenshot-$(date -Iseconds).png
 set $take_screenshot maim --format png
 set $screenshot_to_clipboard xclip -selection clipboard -t image/png
 
