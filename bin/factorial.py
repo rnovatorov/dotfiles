@@ -10,7 +10,6 @@ import shelve
 import sys
 from typing import Any, Callable, Dict, List, Optional
 
-import bs4
 import requests
 
 
@@ -165,11 +164,13 @@ class Client:
         self,
         session: requests.Session,
         user_agent: str = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-        base_url: str = "https://api.factorialhr.com",
+        api_url: str = "https://api.factorialhr.com",
+        id_url: str = "https://id.factorialhr.com",
     ):
         self._session = session
         self._session.headers["User-Agent"] = user_agent
-        self._base_url = base_url
+        self._api_url = api_url
+        self._id_url = id_url
 
     def session_cookie(self) -> Optional["SessionCookie"]:
         try:
@@ -243,32 +244,18 @@ class Client:
             raise RuntimeError("unexpected login email")
 
     def _login(self, email: str, password: str):
-        payload = {
-            "authenticity_token": self._generate_authenticity_token(),
-            "user[email]": email,
-            "user[password]": password,
-            "user[remember_me]": "0",
-        }
-        response = self._session.post(self._url_users_sign_in(), data=payload)
+        payload = {"email": email, "password": password}
+        response = self._session.post(self._url_id_first_factor(), json=payload)
         response.raise_for_status()
 
-    def _generate_authenticity_token(self):
-        response = self._session.get(self._url_users_sign_in())
-        response.raise_for_status()
-        soup = bs4.BeautifulSoup(response.text, "html.parser")
-        try:
-            return soup.find("input", attrs={"name": "authenticity_token"})["value"]
-        except KeyError as e:
-            raise RuntimeError("token not found") from e
-
-    def _url_users_sign_in(self) -> str:
-        return f"{self._base_url}/de/users/sign_in"
+    def _url_id_first_factor(self) -> str:
+        return f"{self._id_url}/api/auth/challenges/first_factor"
 
     def _url_api_resources_api_public_credentials(self) -> str:
-        return f"{self._base_url}/api/resources/api_public/credentials"
+        return f"{self._api_url}/api/resources/api_public/credentials"
 
     def _url_api_resources_attendance_shifts(self) -> str:
-        return f"{self._base_url}/api/resources/attendance/shifts"
+        return f"{self._api_url}/api/resources/attendance/shifts"
 
 
 class Cache:
@@ -302,7 +289,7 @@ class Cache:
 
 class SessionCookie:
 
-    NAME = "_factorial_session_v2"
+    NAME = "_factorial_id"
 
     def __init__(self, value: str, expires_at: datetime.datetime):
         self.value = value
