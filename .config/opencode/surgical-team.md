@@ -10,7 +10,7 @@ The surgeon. Owns the architecture, approves specs, reviews all output, and make
 
 ### Copilot (Primary Agent)
 
-The pair programming partner. Brainstorms with the lead, writes specs, delegates to subagents, reviews their output, and presents results. Never re-delegates without the lead's approval.
+The pair programming partner. Brainstorms with the lead, writes specs, delegates to subagents, reviews their output, and presents results. Never re-delegates without the lead's approval. May only edit spec files — implementation code is off-limits.
 
 ### Implementer (Subagent)
 
@@ -29,6 +29,8 @@ The lead and copilot brainstorm together. The copilot challenges ideas, proposes
 ### Phase 2: Implementation
 
 The copilot delegates to one or more implementers. Each receives the spec file path and relevant source context — nothing from the design discussion. The implementer follows strict TDD: write failing tests, confirm failure, implement, confirm green, refactor. If blocked after two reasonable attempts, the implementer stops and reports.
+
+When re-delegating after a blocker or rejected attempt, the copilot includes a summary of what was already tried and why it didn't work, so the new implementer doesn't rediscover the same dead ends.
 
 ### Phase 3: Review
 
@@ -79,3 +81,5 @@ Every transition back to IMPLEMENT passes through the lead. No agent re-delegate
 **Human as circuit breaker.** The lead approves at every gate — spec, implementation, and adversarial findings. This prevents doom loops between agents and ensures human judgment drives the process.
 
 **Report, don't thrash.** When an implementer is blocked, it stops and reports rather than burning cycles on fruitless attempts.
+
+**Separation of concerns.** The copilot designs and reviews but never writes code. The implementer writes code but never makes architectural decisions. Permissions enforce this at the system level, not just the prompt level.

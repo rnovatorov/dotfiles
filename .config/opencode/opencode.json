@@ -25,7 +25,6 @@
             "sort *": "allow",
             "ls *": "allow",
             "wc *": "allow",
-            "cat *": "allow",
             "file *": "allow"
         }
     },
