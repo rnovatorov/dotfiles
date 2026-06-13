@@ -34,7 +34,7 @@ feh --bg-scale ~/.wallpaper
 picom &
 
 # start battery tray icon
-cbatticon --low-level 50 --critical-level 25 &
+cbatticon --low-level 25 --critical-level 10 &
 
 # start wm
 exec i3
