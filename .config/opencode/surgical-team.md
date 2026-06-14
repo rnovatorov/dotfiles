@@ -24,11 +24,13 @@ The adversary. Reviews the spec and implementation with fresh eyes — no contex
 
 ### Phase 1: Design
 
-The lead and copilot brainstorm together. The copilot challenges ideas, proposes alternatives, and surfaces edge cases. When they reach agreement, the copilot writes a spec document. The lead approves it before any implementation begins.
+The lead and copilot brainstorm together. The copilot challenges ideas, proposes alternatives, and surfaces edge cases. When they reach agreement, the copilot writes a spec document focused on requirements, acceptance criteria, and architectural decisions with their rationale. The lead approves it before any implementation begins.
 
 ### Phase 2: Implementation
 
 The copilot delegates to one or more implementers. Each receives the spec file path and relevant source context — nothing from the design discussion. The implementer follows strict TDD: write failing tests, confirm failure, implement, confirm green, refactor. If blocked after two reasonable attempts, the implementer stops and reports.
+
+The implementer discovers the implementation by reading existing code and following project patterns. If implementation reveals issues that require spec updates, the implementer reports back and the copilot updates the spec before re-delegating.
 
 When re-delegating after a blocker or rejected attempt, the copilot includes a summary of what was already tried and why it didn't work, so the new implementer doesn't rediscover the same dead ends.
 
@@ -85,3 +87,5 @@ Every transition back to IMPLEMENT passes through the lead. No agent re-delegate
 **Separation of concerns.** The copilot designs and reviews but never writes code. The implementer writes code but never makes architectural decisions. Permissions enforce this at the system level, not just the prompt level.
 
 **Spec as source of truth.** The spec must reflect what was actually built, not just what was originally planned. When design decisions change during review, the copilot updates the spec before delegating implementation. This prevents spec drift and ensures the nemesis reviews against the correct baseline.
+
+**Specs describe what and why, not how.** Specs focus on requirements, acceptance criteria, and architectural decisions with their rationale. They do not prescribe implementation details — the implementer discovers the implementation by reading existing code and following project patterns. Some unknowns are only discovered during implementation, and spec updates at that stage are expected.

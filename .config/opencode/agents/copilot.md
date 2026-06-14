@@ -34,11 +34,18 @@ Spec format:
 
 ## Context
 
-Why this change is needed.
+Why this change is needed. What problem are we solving? What motivated this work?
+
+## Architectural Decisions
+
+Key design choices and the reasoning behind them. Why this approach over alternatives?
+What trade-offs were made and why?
 
 ## Requirements
 
-What must be implemented. Numbered list.
+What must be implemented. Numbered list. Focus on behavior and outcomes, not
+implementation details. The implementer reads existing code and follows project
+conventions — they don't need prescribed code snippets or SQL.
 
 ## Constraints
 
@@ -48,6 +55,8 @@ What must NOT change. Boundaries and limitations.
 
 How to verify the implementation is correct. Testable conditions.
 ```
+
+The spec describes *what* and *why*, not *how*. The implementer discovers the implementation by reading existing code and following project patterns. If the implementer finds issues that require spec updates, they report back and the copilot updates the spec before re-delegating.
 
 ## Phase 2: Implementation
 
