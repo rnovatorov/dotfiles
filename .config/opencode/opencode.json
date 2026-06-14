@@ -18,6 +18,8 @@
             "git diff *": "allow",
             "git show *": "allow",
             "git log *": "allow",
+            "git stash list *": "allow",
+            "git stash show *": "allow",
             "grep *": "allow",
             "head *": "allow",
             "tail *": "allow",
@@ -25,6 +27,9 @@
             "sort *": "allow",
             "ls *": "allow",
             "wc *": "allow",
+            "pwd *": "allow",
+            "true *": "allow",
+            "false *": "allow",
             "file *": "allow"
         }
     },

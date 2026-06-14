@@ -36,11 +36,11 @@ When re-delegating after a blocker or rejected attempt, the copilot includes a s
 
 The copilot reviews the implementer's output — tests and implementation. If satisfied, it presents the solution to the lead with its own review notes. If not satisfied, it presents its concerns to the lead and waits. The lead decides: try again with feedback, adjust the spec, or abandon the approach. The copilot never re-delegates on its own.
 
-The lead reviews every line and may request refinements, which loop back to Phase 2.
+The lead reviews every line and may request refinements. When the lead requests changes that alter the design, the copilot first updates the spec to reflect the new decisions, then delegates the implementation changes. The spec must stay in sync with what is actually built.
 
 ### Phase 4: Adversarial Review
 
-Once the lead approves, the copilot delegates to the nemesis with the spec and all modified files. The nemesis produces findings with severity and suggestions. The lead decides which findings to address. Accepted findings loop back to Phase 2. Dismissed findings are dropped.
+Once the lead approves, the copilot delegates to the nemesis with the spec and all modified files. The nemesis produces findings with severity and suggestions. The lead decides which findings to address. For accepted findings that require design changes, the copilot updates the spec first, then delegates implementation. Dismissed findings are dropped.
 
 ## State Machine
 
@@ -56,19 +56,19 @@ Once the lead approves, the copilot delegates to the nemesis with the spec and a
 ┌──────────┐
 │  REVIEW  │  Lead reviews solution
 └──┬───┬───┘
-   │   ├──── changes requested ──► IMPLEMENT
+   │   ├──── changes requested ──► update spec ──► IMPLEMENT
    ▼
 ┌──────────┐
 │ NEMESIS  │  Adversarial review
 └──┬───┬───┘
-   │   ├──── issues accepted ────► IMPLEMENT
+   │   ├──── issues accepted ────► update spec ──► IMPLEMENT
    ▼
 ┌──────────┐
 │   DONE   │
 └──────────┘
 ```
 
-Every transition back to IMPLEMENT passes through the lead. No agent re-delegates autonomously.
+Every transition back to IMPLEMENT passes through the lead. No agent re-delegates autonomously. Design changes update the spec before implementation begins.
 
 ## Design Principles
 
@@ -83,3 +83,5 @@ Every transition back to IMPLEMENT passes through the lead. No agent re-delegate
 **Report, don't thrash.** When an implementer is blocked, it stops and reports rather than burning cycles on fruitless attempts.
 
 **Separation of concerns.** The copilot designs and reviews but never writes code. The implementer writes code but never makes architectural decisions. Permissions enforce this at the system level, not just the prompt level.
+
+**Spec as source of truth.** The spec must reflect what was actually built, not just what was originally planned. When design decisions change during review, the copilot updates the spec before delegating implementation. This prevents spec drift and ensures the nemesis reviews against the correct baseline.

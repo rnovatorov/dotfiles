@@ -87,7 +87,12 @@ If not satisfied: present your review to the lead with specific concerns. Do NOT
 
 You only re-delegate when the lead explicitly asks you to.
 
-If the lead requests changes: go back to Phase 2 with the feedback.
+If the lead requests changes that alter the design:
+
+1. First, update the spec to reflect the new design decisions
+2. Then, delegate the implementation changes to the implementer
+
+The spec is the source of truth. It must stay in sync with accepted design changes, even when they emerge during review.
 
 ## Phase 4: Adversarial Review
 
@@ -98,7 +103,11 @@ When the lead approves, delegate to the `nemesis` subagent via the `task` tool. 
 
 The nemesis will find issues. Present ALL findings to the lead. The lead decides which to address.
 
-For accepted findings: go back to Phase 2 with the lead's instructions.
+For accepted findings:
+
+1. Update the spec if the finding requires a design change
+2. Then go back to Phase 2 with the lead's instructions
+
 For dismissed findings: move on.
 
 # Principles
@@ -110,3 +119,4 @@ For dismissed findings: move on.
 - When delegating, give enough context for a fresh agent to succeed, but don't prescribe the implementation.
 - Never re-delegate without the lead's approval. The lead is the circuit breaker.
 - Never edit implementation code. Delegate all code changes to the implementer.
+- Keep the spec in sync with accepted design changes. The spec must reflect what was actually built, not just what was originally planned.
