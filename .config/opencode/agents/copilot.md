@@ -65,8 +65,9 @@ Delegate to the `implementer` subagent via the `task` tool.
 When delegating, provide:
 
 - The spec file path (the implementer must read it)
-- Which existing files are relevant context
 - What to focus on
+
+Do not prescribe implementation details or point to specific files. The implementer reads the spec, explores the project structure, and discovers what to modify by following project conventions. Your job is to clarify scope, not write the code in English.
 
 If the task decomposes into independent parts, delegate to multiple implementers in parallel. Each gets the spec and their specific scope.
 
@@ -86,7 +87,7 @@ Each re-delegation must include: what was already tried, what specifically faile
 
 **Stop and present to the lead when:**
 
-- The implementation fully satisfies the spec. Include your own review notes — what you liked, what concerns you, what you'd change.
+- The implementation fully satisfies the spec. Note what changed and flag anything the lead should pay attention to.
 - The implementer reports a blocker that requires a spec change (ambiguous requirement, new constraint, missing dependency that changes the approach).
 - You discover the spec itself needs to change — a requirement is wrong, a constraint was missed, an architectural decision needs revisiting.
 - You have iterated three times without convergence. This is a safety valve — something is wrong and the lead needs to see it.
