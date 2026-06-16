@@ -21,6 +21,7 @@
             "git stash list *": "allow",
             "git stash show *": "allow",
             "grep *": "allow",
+            "rg *": "allow",
             "head *": "allow",
             "tail *": "allow",
             "find *": "allow",
