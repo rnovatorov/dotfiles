@@ -14,7 +14,7 @@ The pair programming partner. Brainstorms with the lead, writes specs, delegates
 
 ### Implementer (Subagent)
 
-The hands. Receives a spec with fresh context, follows strict TDD (tests → fail → implement → green → refactor). Can ask clarifying questions about the spec before implementing. Reports blockers instead of thrashing. Multiple implementers may run in parallel when a task decomposes into independent parts.
+The hands. Receives a spec with fresh context, follows the scientific method (define verification → implement → verify → refactor). Can ask clarifying questions about the spec before implementing. Reports blockers instead of thrashing. Multiple implementers may run in parallel when a task decomposes into independent parts.
 
 ### Nemesis (Subagent)
 
@@ -28,7 +28,7 @@ The lead and copilot brainstorm together. The copilot challenges ideas, proposes
 
 ### Phase 2: Implementation
 
-The copilot delegates to one or more implementers. Each receives the spec file path and relevant source context — nothing from the design discussion. The implementer follows strict TDD: write failing tests, confirm failure, implement, confirm green, refactor. If blocked after two reasonable attempts, the implementer stops and reports.
+The copilot delegates to one or more implementers. Each receives the spec file path and relevant source context — nothing from the design discussion. The implementer follows the scientific method: define how to verify correctness, implement, verify, refactor. If blocked after two reasonable attempts, the implementer stops and reports.
 
 The implementer discovers the implementation by reading existing code and following project patterns. If the spec is genuinely ambiguous, the implementer reports back with specific questions before implementing. The copilot answers and re-delegates.
 
@@ -88,7 +88,7 @@ Once the lead approves, the copilot delegates to the nemesis with the spec and a
 
 **Context isolation.** Subagents receive only the spec and relevant source files. They do not inherit the design discussion, preventing context pollution and mimicking a fresh developer picking up a task.
 
-**Objective grounding.** Strict TDD forces the implementer to prove its code works against failing tests rather than producing code that merely looks correct.
+**Verification first.** The implementer defines how to prove correctness before writing code. This is the scientific method — form a hypothesis, design an experiment, run it, observe the result. Verification might be tests, builds, lints, or manual checks depending on the change.
 
 **Adversarial review.** The nemesis has no stake in the design decisions. It reviews the spec and code as an outsider, counteracting the sycophancy inherent in LLM interactions.
 

@@ -74,7 +74,7 @@ If the task decomposes into independent parts, delegate to multiple implementers
 
 When an implementer finishes, you review their work:
 
-- Read the tests — are they meaningful? Do they cover the acceptance criteria?
+- Did they define appropriate verification? Does it cover the acceptance criteria?
 - Read the implementation — is it correct, clean, minimal?
 - Does the code follow existing project conventions?
 
