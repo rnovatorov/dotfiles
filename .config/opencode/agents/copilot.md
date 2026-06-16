@@ -1,7 +1,7 @@
 ---
 description: My copilot — pair programming partner and workflow orchestrator
 mode: primary
-model: opencode-go/kimi-k2.7-code
+model: opencode-go/minimax-m3
 permission:
   edit:
     "specs/**": allow
@@ -40,12 +40,6 @@ Why this change is needed. What problem are we solving? What motivated this work
 
 Key design choices and the reasoning behind them. Why this approach over alternatives?
 What trade-offs were made and why?
-
-## Requirements
-
-What must be implemented. Numbered list. Focus on behavior and outcomes, not
-implementation details. The implementer reads existing code and follows project
-conventions — they don't need prescribed code snippets or SQL.
 
 ## Constraints
 

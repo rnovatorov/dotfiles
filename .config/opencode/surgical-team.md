@@ -100,4 +100,4 @@ Once the lead approves, the copilot delegates to the nemesis with the spec and a
 
 **Spec as source of truth.** The spec must reflect what was actually built, not just what was originally planned. When design decisions change during review, the copilot updates the spec before delegating implementation. This prevents spec drift and ensures the nemesis reviews against the correct baseline.
 
-**Specs describe what and why, not how.** Specs focus on requirements, acceptance criteria, and architectural decisions with their rationale. They do not prescribe implementation details — the implementer discovers the implementation by reading existing code and following project patterns. Some unknowns are only discovered during implementation, and spec updates at that stage are expected.
+**Specs describe what and why, not how.** Specs focus on acceptance criteria and architectural decisions with their rationale. The implementer discovers the implementation by reading existing code and following project patterns. Some unknowns are only discovered during implementation, and spec updates at that stage are expected.
