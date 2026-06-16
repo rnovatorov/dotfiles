@@ -10,11 +10,11 @@ The surgeon. Owns the architecture, approves specs, reviews all output, and make
 
 ### Copilot (Primary Agent)
 
-The pair programming partner. Brainstorms with the lead, writes specs, delegates to subagents, reviews their output, and presents results. Never re-delegates without the lead's approval. May only edit spec files — implementation code is off-limits.
+The pair programming partner. Brainstorms with the lead, writes specs, delegates to subagents, reviews their output, and presents results. Iterates autonomously with implementers within the approved spec. May only edit spec files — implementation code is off-limits.
 
 ### Implementer (Subagent)
 
-The hands. Receives a spec with fresh context, follows strict TDD (tests → fail → implement → green → refactor). Reports blockers instead of thrashing. Multiple implementers may run in parallel when a task decomposes into independent parts.
+The hands. Receives a spec with fresh context, follows strict TDD (tests → fail → implement → green → refactor). Can ask clarifying questions about the spec before implementing. Reports blockers instead of thrashing. Multiple implementers may run in parallel when a task decomposes into independent parts.
 
 ### Nemesis (Subagent)
 
@@ -30,13 +30,22 @@ The lead and copilot brainstorm together. The copilot challenges ideas, proposes
 
 The copilot delegates to one or more implementers. Each receives the spec file path and relevant source context — nothing from the design discussion. The implementer follows strict TDD: write failing tests, confirm failure, implement, confirm green, refactor. If blocked after two reasonable attempts, the implementer stops and reports.
 
-The implementer discovers the implementation by reading existing code and following project patterns. If implementation reveals issues that require spec updates, the implementer reports back and the copilot updates the spec before re-delegating.
+The implementer discovers the implementation by reading existing code and following project patterns. If the spec is genuinely ambiguous, the implementer reports back with specific questions before implementing. The copilot answers and re-delegates.
+
+If implementation reveals issues that require spec updates, the implementer reports back and the copilot updates the spec before re-delegating.
 
 When re-delegating after a blocker or rejected attempt, the copilot includes a summary of what was already tried and why it didn't work, so the new implementer doesn't rediscover the same dead ends.
 
-### Phase 3: Review
+### Phase 3: Review Loop
 
-The copilot reviews the implementer's output — tests and implementation. If satisfied, it presents the solution to the lead with its own review notes. If not satisfied, it presents its concerns to the lead and waits. The lead decides: try again with feedback, adjust the spec, or abandon the approach. The copilot never re-delegates on its own.
+The copilot reviews the implementer's output — tests and implementation — and iterates autonomously. If the implementation has issues within the spec (code quality, missing edge cases, test coverage gaps, convention violations), the copilot re-delegates with specific feedback. The lead approved the spec; the copilot is trusted to enforce it.
+
+The copilot stops and presents to the lead when:
+
+- The implementation fully satisfies the spec
+- The implementer reports a blocker that requires a spec change
+- The copilot discovers the spec itself needs to change
+- The copilot has iterated three times without convergence (safety valve)
 
 The lead reviews every line and may request refinements. When the lead requests changes that alter the design, the copilot first updates the spec to reflect the new decisions, then delegates the implementation changes. The spec must stay in sync with what is actually built.
 
@@ -56,10 +65,15 @@ Once the lead approves, the copilot delegates to the nemesis with the spec and a
 └────┬─────┘
      ▼
 ┌──────────┐
-│  REVIEW  │  Lead reviews solution
+│  REVIEW  │  Copilot reviews implementation
 └──┬───┬───┘
-   │   ├──── changes requested ──► update spec ──► IMPLEMENT
+   │   ├──── issues within spec ──► IMPLEMENT (autonomous loop)
+   │   ├──── spec change needed ──► Lead decides ──► update spec ──► IMPLEMENT
    ▼
+┌──────────┐
+│   LEAD   │  Lead reviews final solution
+└────┬─────┘
+     ▼
 ┌──────────┐
 │ NEMESIS  │  Adversarial review
 └──┬───┬───┘
@@ -70,8 +84,6 @@ Once the lead approves, the copilot delegates to the nemesis with the spec and a
 └──────────┘
 ```
 
-Every transition back to IMPLEMENT passes through the lead. No agent re-delegates autonomously. Design changes update the spec before implementation begins.
-
 ## Design Principles
 
 **Context isolation.** Subagents receive only the spec and relevant source files. They do not inherit the design discussion, preventing context pollution and mimicking a fresh developer picking up a task.
@@ -80,7 +92,7 @@ Every transition back to IMPLEMENT passes through the lead. No agent re-delegate
 
 **Adversarial review.** The nemesis has no stake in the design decisions. It reviews the spec and code as an outsider, counteracting the sycophancy inherent in LLM interactions.
 
-**Human as circuit breaker.** The lead approves at every gate — spec, implementation, and adversarial findings. This prevents doom loops between agents and ensures human judgment drives the process.
+**Human as circuit breaker.** The lead approves at every gate — spec, implementation, and adversarial findings. The copilot iterates autonomously within the approved spec, but spec changes always require the lead.
 
 **Report, don't thrash.** When an implementer is blocked, it stops and reports rather than burning cycles on fruitless attempts.
 
