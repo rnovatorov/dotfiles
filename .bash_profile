@@ -12,7 +12,7 @@ export PATH=${PATH}:~/.local/bin:~/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Set GOPATH
-export GOPATH=~/code/go
+export GOPATH=~/go
 
 # Add GOPATH/bin to PATH
 export PATH=${PATH}:${GOPATH}/bin
