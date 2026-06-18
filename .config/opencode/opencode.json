@@ -6,6 +6,7 @@
         "task": "deny",
         "todowrite": "deny",
         "edit": "deny",
+        "skill": "allow",
         "read": "allow",
         "glob": "allow",
         "grep": "allow",
@@ -49,6 +50,31 @@
         },
         "scout": {
             "disable": true
+        },
+        "copilot": {
+            "model": "opencode-go/glm-5.1",
+            "permission": {
+                "edit": {
+                    "*": "deny",
+                    "specs/**": "allow"
+                },
+                "task": "allow"
+            }
+        },
+        "nemesis": {
+            "model": "opencode-go/glm-5.2"
+        },
+        "implementer": {
+            "model": "opencode-go/deepseek-v4-pro",
+            "permission": {
+                "edit": "allow"
+            }
+        },
+        "zen": {
+            "model": "opencode-go/glm-5.2",
+            "permission": {
+                "edit": "allow"
+            }
         }
     }
 }
