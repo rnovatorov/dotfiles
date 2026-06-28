@@ -133,6 +133,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'json': ['jq'],
+\   'jsonc': ['biome'],
 \   'markdown': ['prettier'],
 \   'go': ['goimports', 'gofumpt'],
 \   'python': ['black', 'isort'],
@@ -153,3 +154,4 @@ let g:ale_c_parse_makefile = 1
 let g:ale_sql_pgformatter_options = "--no-extra-line --nogrouping --wrap-limit 90 --type-case 2"
 
 let g:ale_json_jq_options = "--indent 4"
+let g:ale_biome_options = "--json-formatter-indent-style=space"
