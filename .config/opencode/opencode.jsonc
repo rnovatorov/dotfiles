@@ -1,80 +1,85 @@
 {
-    "$schema": "https://opencode.ai/config.json",
-    "default_agent": "copilot",
-    "permission": {
-        "*": "ask",
-        "task": "deny",
-        "todowrite": "deny",
-        "edit": "deny",
-        "skill": "allow",
-        "read": "allow",
-        "glob": "allow",
-        "grep": "allow",
-        "question": "allow",
-        "webfetch": "allow",
-        "websearch": "allow",
-        "codesearch": "allow",
-        "bash": {
-            "git status *": "allow",
-            "git diff *": "allow",
-            "git show *": "allow",
-            "git log *": "allow",
-            "git stash list *": "allow",
-            "git stash show *": "allow",
-            "grep *": "allow",
-            "rg *": "allow",
-            "head *": "allow",
-            "tail *": "allow",
-            "find *": "allow",
-            "sort *": "allow",
-            "ls *": "allow",
-            "wc *": "allow",
-            "pwd *": "allow",
-            "true *": "allow",
-            "false *": "allow",
-            "file *": "allow"
-        }
-    },
-    "agent": {
-        "plan": {
-            "disable": true
-        },
-        "build": {
-            "disable": true
-        },
-        "general": {
-            "disable": true
-        },
-        "explore": {
-            "disable": true
-        },
-        "scout": {
-            "disable": true
-        },
-        "copilot": {
-            "model": "opencode-go/glm-5.1",
-            "permission": {
-                "edit": {
-                    "*": "deny",
-                    "specs/**": "allow"
-                },
-                "task": "allow"
-            }
-        },
-        "nemesis": {
-            "model": "opencode-go/glm-5.2"
-        },
-        "implementer": {
-            "model": "opencode-go/deepseek-v4-pro",
-            "permission": {
-                "edit": "allow"
-            }
-        },
-        "zen": {
-            "model": "opencode-go/glm-5.2",
-            "permission": {
-                "edit": "allow"
-            }
-        }
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "zen",
+  "permission": {
+    // default
+    "*": "ask",
+
+    // denylist
+    "todowrite": "deny",
+    "edit": "deny",
+    "task": "deny",
+
+    // allowlist
+    "skill": "allow",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "question": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "codesearch": "allow",
+    "bash": {
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git show *": "allow",
+      "git log *": "allow",
+      "git stash list *": "allow",
+      "git stash show *": "allow",
+      "grep *": "allow",
+      "rg *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "find *": "allow",
+      "sort *": "allow",
+      "ls *": "allow",
+      "wc *": "allow",
+      "pwd *": "allow",
+      "true *": "allow",
+      "false *": "allow",
+      "file *": "allow"
     }
+  },
+  "agent": {
+    // configure custom agents
+    "zen": {
+      "model": "zai-coding-plan/glm-5.2",
+      "permission": {
+        "edit": "allow",
+        "task": "allow"
+      }
+    },
+    "nemesis": {
+      "model": "zai-coding-plan/glm-5.2",
+      "permission": {
+        "edit": "allow"
+      }
+    },
+    "copilot": {
+      "disable": true
+    },
+    "implementer": {
+      "disable": true
+    },
+    // reconfigure built-in general subagent
+    "general": {
+      "model": "opencode-go/deepseek-v4-pro",
+      "permission": {
+        "edit": "allow"
+      }
+    },
+    // disable other built-in agents
+    "plan": {
+      "disable": true
+    },
+    "build": {
+      "disable": true
+    },
+    "explore": {
+      "disable": true
+    },
+    "scout": {
+      "disable": true
+    }
+  }
 }
