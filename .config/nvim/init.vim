@@ -129,6 +129,7 @@ let g:ale_linters = {
 \   'proto': ['protoc-gen-lint'],
 \   'sh': ['shellcheck'],
 \   'sql': [],
+\   'yaml': [],
 \}
 
 let g:ale_fixers = {
@@ -146,6 +147,7 @@ let g:ale_fixers = {
 \   'sql': ['pgformatter'],
 \   'lua': ['stylua'],
 \   'html': ['prettier'],
+\   'yaml': ['prettier'],
 \}
 
 let g:ale_c_clangformat_options = '--style "{IndentWidth: 4}"'
