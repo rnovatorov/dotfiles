@@ -1,0 +1,20 @@
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[user]
+	email = roman.novatorov@gmail.com
+	name = Roman Novatorov
+[diff]
+	algorith = histogram
+[pull]
+	ff = only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = ~/.gitignore
