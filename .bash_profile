@@ -14,6 +14,9 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # Set GOPATH
 export GOPATH=~/go
 
+# Set Python pycache prefix
+export PYTHONPYCACHEPREFIX=~/.cache/pycache
+
 # Add GOPATH/bin to PATH
 export PATH=${PATH}:${GOPATH}/bin
 
