@@ -46,7 +46,7 @@
       "model": "zai-coding-plan/glm-5.2"
     },
     "smart-subagent": {
-      "model": "zai-coding-plan/glm-5.2"
+      "model": "opencode-go/kimi-k3"
     },
     "balanced-subagent": {
       "model": "opencode-go/deepseek-v4-pro"
