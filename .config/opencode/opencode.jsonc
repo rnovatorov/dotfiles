@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "primary",
+  "default_agent": "main",
   "permission": {
     // default
     "*": "ask",
@@ -42,14 +42,17 @@
   },
   "agent": {
     // configure custom agents
-    "primary": {
+    "main": {
       "model": "zai-coding-plan/glm-5.2"
     },
-    "smart-general": {
+    "smart-subagent": {
       "model": "zai-coding-plan/glm-5.2"
     },
-    "fast-general": {
+    "balanced-subagent": {
       "model": "opencode-go/deepseek-v4-pro"
+    },
+    "fast-subagent": {
+      "model": "opencode-go/deepseek-v4-flash"
     },
 
     // disable built-in agents
