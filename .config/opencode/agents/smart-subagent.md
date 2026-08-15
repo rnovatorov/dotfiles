@@ -1,4 +1,4 @@
 ---
-description: A smart general subagent. Performs slowly but can handle any task you throw at it. Reliability: high.
+description: A smart general subagent. Performs slowly but can handle almost any task you throw at it.
 mode: subagent
 ---
