@@ -126,7 +126,7 @@ let g:ale_linters = {
 \   'typescript': ['tsserver'],
 \   'typescriptreact': ['tsserver'],
 \   'lua': ['luac', 'lua-language-server'],
-\   'proto': ['protoc-gen-lint'],
+\   'proto': ['buf-lint'],
 \   'sh': ['shellcheck'],
 \   'sql': [],
 \   'yaml': [],
@@ -146,6 +146,7 @@ let g:ale_fixers = {
 \   'typescriptreact': ['prettier'],
 \   'sql': ['pgformatter'],
 \   'lua': ['stylua'],
+\   'proto': ['buf-format'],
 \   'html': ['prettier'],
 \   'yaml': ['prettier'],
 \}
