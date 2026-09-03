@@ -24,6 +24,6 @@ convention is detected.
 Consider the following references when creating new commit messages:
 
 - **Subject line rules, body format, URLs, issue references**:
-  [references/commit_format.md](references/commit_format.md)
+  [references/commit-format.md](references/commit-format.md)
 - **Split strategies, anti-rationalizations, and refactoring patterns**:
-  [references/atomic_commits.md](references/atomic_commits.md)
+  [references/atomic-commits.md](references/atomic-commits.md)
