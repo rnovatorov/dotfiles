@@ -4,6 +4,11 @@ set number
 " Show the active mode
 set showmode
 
+" Use OSC52 clipboard when there is no desktop clipboard
+if empty($DISPLAY) && empty($WAYLAND_DISPLAY)
+  let g:clipboard = 'osc52'
+endif
+
 " Use system clipboard
 set clipboard=unnamedplus
 
