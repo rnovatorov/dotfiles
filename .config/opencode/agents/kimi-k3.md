@@ -1,5 +1,5 @@
 ---
-description: A general purpose subagent running Kimi K3.
+description: A smart general purpose subagent.
 mode: subagent
 model: opencode-go/kimi-k3
 variant: max

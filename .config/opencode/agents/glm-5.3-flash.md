@@ -1,6 +1,6 @@
 ---
 description: A fast general purpose subagent.
 mode: subagent
-model: opencode-go/deepseek-v4-flash
+model: zai-coding-plan/glm-5.3-flash
 variant: max
 ---
