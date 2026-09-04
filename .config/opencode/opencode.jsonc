@@ -1,15 +1,20 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "default_agent": "primary",
+  "default_agent": "main",
   "subagent_depth": 2,
   "permission": {
-    // default
+    // ask by default
     "*": "ask",
 
     // denylist
     "todowrite": "deny",
 
     // allowlist
+    "external_directory": {
+      "/tmp/*": "allow",
+      "/home/*/code/*": "allow",
+      "/home/*/.config/opencode/skills/*": "allow"
+    },
     "edit": "allow",
     "task": "allow",
     "skill": "allow",
@@ -21,45 +26,44 @@
     "websearch": "allow",
     "codesearch": "allow",
     "bash": {
+      // git
       "git status *": "allow",
       "git diff *": "allow",
       "git show *": "allow",
       "git log *": "allow",
+      "git tag -l *": "allow",
       "git stash list *": "allow",
       "git stash show *": "allow",
+      "git describe *": "allow",
+      "git clone *": "allow",
+      // opencode
+      "opencode --version": "allow",
+      // other stuff
+      "sleep *": "allow",
+      "cat *": "allow",
       "grep *": "allow",
       "rg *": "allow",
       "head *": "allow",
       "tail *": "allow",
       "find *": "allow",
       "sort *": "allow",
+      "uniq *": "allow",
       "ls *": "allow",
       "wc *": "allow",
       "pwd *": "allow",
       "true *": "allow",
       "false *": "allow",
-      "file *": "allow"
+      "file *": "allow",
+      "echo *": "allow",
+      "which *": "allow",
+      "tr *": "allow",
+      "man *": "allow",
+      "col *": "allow",
+      "strings *": "allow",
+      "printf *": "allow"
     }
   },
   "agent": {
-    // configure custom agents
-    "primary-agent": {
-      "model": "zai-coding-plan/glm-5.3",
-      "variant": "max"
-    },
-    "smart-subagent": {
-      "model": "opencode-go/kimi-k3",
-      "variant": "max"
-    },
-    "balanced-subagent": {
-      "model": "opencode-go/deepseek-v4-pro",
-      "variant": "max"
-    },
-    "fast-subagent": {
-      "model": "opencode-go/deepseek-v4-flash",
-      "variant": "max"
-    },
-
     // disable built-in agents
     "plan": {
       "disable": true
