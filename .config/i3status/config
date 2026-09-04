@@ -62,13 +62,13 @@ cpu_usage {
 cpu_temperature 0 {
         format = "T0: %degrees °C"
         max_threshold = 86
-        path = "/sys/class/hwmon/hwmon5/temp1_input"
+        path = "/sys/class/hwmon/hwmon4/temp2_input"
 }
 
 cpu_temperature 1 {
         format = "T1: %degrees °C"
         max_threshold = 86
-        path = "/sys/class/hwmon/hwmon5/temp2_input"
+        path = "/sys/class/hwmon/hwmon4/temp3_input"
     }
 
 memory {
