@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+exec alacritty --option 'terminal.osc52="CopyPaste"'
