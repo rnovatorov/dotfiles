@@ -38,6 +38,9 @@
       "git clone *": "allow",
       // opencode
       "opencode --version": "allow",
+      // pdfs
+      "pdfinfo *": "allow",
+      "pdftotext *": "allow",
       // other stuff
       "sleep *": "allow",
       "cat *": "allow",
