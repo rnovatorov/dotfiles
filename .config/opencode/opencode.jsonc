@@ -42,6 +42,7 @@
       "pdfinfo *": "allow",
       "pdftotext *": "allow",
       // other stuff
+      "date *": "allow",
       "sleep *": "allow",
       "cat *": "allow",
       "grep *": "allow",
