@@ -36,11 +36,14 @@
       "git stash show *": "allow",
       "git describe *": "allow",
       "git clone *": "allow",
+      "git worktree list *": "allow",
       // opencode
       "opencode --version": "allow",
       // pdfs
       "pdfinfo *": "allow",
       "pdftotext *": "allow",
+      // go
+      "go version *": "allow",
       // other stuff
       "date *": "allow",
       "sleep *": "allow",
@@ -64,6 +67,7 @@
       "man *": "allow",
       "col *": "allow",
       "strings *": "allow",
+      "diff *": "allow",
       "printf *": "allow"
     }
   },
