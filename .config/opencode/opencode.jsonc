@@ -6,10 +6,9 @@
     // ask by default
     "*": "ask",
 
-    // denylist
+    // drop todos
     "todowrite": "deny",
 
-    // allowlist
     "external_directory": {
       "/tmp/*": "allow",
       "/home/*/code/*": "allow",
@@ -26,6 +25,8 @@
     "websearch": "allow",
     "codesearch": "allow",
     "bash": {
+      // no sudo here
+      "sudo": "deny",
       // git
       "git status *": "allow",
       "git diff *": "allow",
@@ -37,6 +38,8 @@
       "git describe *": "allow",
       "git clone *": "allow",
       "git worktree list *": "allow",
+      "git ls-tree *": "allow",
+      "git rev-parse *": "allow",
       // opencode
       "opencode --version": "allow",
       // pdfs
@@ -44,18 +47,18 @@
       "pdftotext *": "allow",
       // go
       "go version *": "allow",
-      // other stuff
+      // read-only stuff
+      "cat *": "allow",
       "date *": "allow",
       "sleep *": "allow",
-      "cat *": "allow",
       "grep *": "allow",
       "rg *": "allow",
       "head *": "allow",
       "tail *": "allow",
-      "find *": "allow",
       "sort *": "allow",
       "uniq *": "allow",
       "ls *": "allow",
+      "du *": "allow",
       "wc *": "allow",
       "pwd *": "allow",
       "true *": "allow",
@@ -68,7 +71,13 @@
       "col *": "allow",
       "strings *": "allow",
       "diff *": "allow",
-      "printf *": "allow"
+      "printf *": "allow",
+      // dangerous stuff
+      "awk *": "allow",
+      "find *": "allow",
+      "mkdir *": "allow",
+      "jq *": "allow",
+      "sed *": "allow"
     }
   },
   "agent": {
