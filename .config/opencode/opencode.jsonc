@@ -1,101 +1,101 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "main",
-  "subagent_depth": 2,
-  "permission": {
-    // ask by default
-    "*": "ask",
-
-    // drop todos
-    "todowrite": "deny",
-
-    "external_directory": {
-      "/tmp/*": "allow",
-      "/home/*/code/*": "allow",
-      "/home/*/.config/opencode/skills/*": "allow"
-    },
-    "edit": "allow",
-    "task": "allow",
-    "skill": "allow",
-    "read": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "question": "allow",
-    "webfetch": "allow",
-    "websearch": "allow",
-    "codesearch": "allow",
-    "bash": {
-      // no sudo here
-      "sudo": "deny",
-      // git
-      "git status *": "allow",
-      "git diff *": "allow",
-      "git show *": "allow",
-      "git log *": "allow",
-      "git tag -l *": "allow",
-      "git stash list *": "allow",
-      "git stash show *": "allow",
-      "git describe *": "allow",
-      "git clone *": "allow",
-      "git worktree list *": "allow",
-      "git ls-tree *": "allow",
-      "git rev-parse *": "allow",
-      // opencode
-      "opencode --version": "allow",
-      // pdfs
-      "pdfinfo *": "allow",
-      "pdftotext *": "allow",
-      // go
-      "go version *": "allow",
-      // read-only stuff
-      "cat *": "allow",
-      "date *": "allow",
-      "sleep *": "allow",
-      "grep *": "allow",
-      "rg *": "allow",
-      "head *": "allow",
-      "tail *": "allow",
-      "sort *": "allow",
-      "uniq *": "allow",
-      "ls *": "allow",
-      "du *": "allow",
-      "wc *": "allow",
-      "pwd *": "allow",
-      "true *": "allow",
-      "false *": "allow",
-      "file *": "allow",
-      "echo *": "allow",
-      "which *": "allow",
-      "tr *": "allow",
-      "man *": "allow",
-      "col *": "allow",
-      "strings *": "allow",
-      "diff *": "allow",
-      "printf *": "allow",
-      // dangerous stuff
-      "awk *": "allow",
-      "find *": "allow",
-      "mkdir *": "allow",
-      "jq *": "allow",
-      "sed *": "allow"
-    }
+  // never publish conversations to share links
+  "share": "disabled",
+  "experimental": {
+    "subagent_depth": 2
   },
-  "agent": {
+  "permissions": [
+    // ask by default
+    { "action": "*", "resource": "*", "effect": "ask" },
+
+    // external directories
+    { "action": "external_directory", "resource": "/tmp/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "/home/*/code/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "/home/*/.config/opencode/skills/*", "effect": "allow" },
+    { "action": "external_directory", "resource": "/home/*/.local/share/opencode/tool-output/*", "effect": "allow" },
+
+    { "action": "edit", "resource": "*", "effect": "allow" },
+    { "action": "subagent", "resource": "*", "effect": "allow" },
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "question", "resource": "*", "effect": "allow" },
+    { "action": "webfetch", "resource": "*", "effect": "allow" },
+    { "action": "websearch", "resource": "*", "effect": "allow" },
+
+    // shell
+    { "action": "shell", "resource": "sudo *", "effect": "deny" },
+    // git
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git tag -l *", "effect": "allow" },
+    { "action": "shell", "resource": "git stash list *", "effect": "allow" },
+    { "action": "shell", "resource": "git stash show *", "effect": "allow" },
+    { "action": "shell", "resource": "git describe *", "effect": "allow" },
+    { "action": "shell", "resource": "git clone *", "effect": "allow" },
+    { "action": "shell", "resource": "git worktree list *", "effect": "allow" },
+    { "action": "shell", "resource": "git ls-tree *", "effect": "allow" },
+    { "action": "shell", "resource": "git rev-parse *", "effect": "allow" },
+    // opencode
+    { "action": "shell", "resource": "opencode --version", "effect": "allow" },
+    // pdfs
+    { "action": "shell", "resource": "pdfinfo *", "effect": "allow" },
+    { "action": "shell", "resource": "pdftotext *", "effect": "allow" },
+    // go
+    { "action": "shell", "resource": "go version *", "effect": "allow" },
+    // read-only stuff
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "date *", "effect": "allow" },
+    { "action": "shell", "resource": "sleep *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "sort *", "effect": "allow" },
+    { "action": "shell", "resource": "uniq *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "du *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "pwd *", "effect": "allow" },
+    { "action": "shell", "resource": "true *", "effect": "allow" },
+    { "action": "shell", "resource": "false *", "effect": "allow" },
+    { "action": "shell", "resource": "file *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "tr *", "effect": "allow" },
+    { "action": "shell", "resource": "man *", "effect": "allow" },
+    { "action": "shell", "resource": "col *", "effect": "allow" },
+    { "action": "shell", "resource": "strings *", "effect": "allow" },
+    { "action": "shell", "resource": "diff *", "effect": "allow" },
+    { "action": "shell", "resource": "printf *", "effect": "allow" },
+    // dangerous stuff
+    { "action": "shell", "resource": "awk *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "mkdir *", "effect": "allow" },
+    { "action": "shell", "resource": "jq *", "effect": "allow" },
+    { "action": "shell", "resource": "sed *", "effect": "allow" }
+  ],
+  "agents": {
     // disable built-in agents
     "plan": {
-      "disable": true
+      "disabled": true
     },
     "build": {
-      "disable": true
+      "disabled": true
     },
     "general": {
-      "disable": true
+      "disabled": true
     },
     "explore": {
-      "disable": true
+      "disabled": true
     },
     "scout": {
-      "disable": true
+      "disabled": true
     }
   }
 }
