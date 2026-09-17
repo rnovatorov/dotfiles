@@ -1,6 +1,7 @@
 ---
 description: A balanced general purpose subagent.
 mode: subagent
-model: opencode-go/deepseek-v4-pro
-variant: max
+model: openai/gpt-5.6-terra#high
 ---
+
+Your model is GPT-5.6 Terra.

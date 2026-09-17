@@ -1,6 +1,0 @@
----
-description: A fast general purpose subagent.
-mode: subagent
-model: opencode-go/deepseek-v4-flash
-variant: max
----
