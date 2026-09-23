@@ -10,6 +10,9 @@
     // ask by default
     { "action": "*", "resource": "*", "effect": "ask" },
 
+    // no browser tools: removes the browser catalog from model context entirely
+    { "action": "browser", "resource": "*", "effect": "deny" },
+
     // external directories
     { "action": "external_directory", "resource": "/tmp/*", "effect": "allow" },
     { "action": "external_directory", "resource": "/home/*/code/*", "effect": "allow" },
@@ -28,6 +31,8 @@
 
     // shell
     { "action": "shell", "resource": "sudo *", "effect": "deny" },
+    { "action": "shell", "resource": "* pip * --break-system-packages *", "effect": "deny" },
+
     // git
     { "action": "shell", "resource": "git status *", "effect": "allow" },
     { "action": "shell", "resource": "git diff *", "effect": "allow" },
@@ -40,7 +45,10 @@
     { "action": "shell", "resource": "git clone *", "effect": "allow" },
     { "action": "shell", "resource": "git worktree list *", "effect": "allow" },
     { "action": "shell", "resource": "git ls-tree *", "effect": "allow" },
+    { "action": "shell", "resource": "git ls-files *", "effect": "allow" },
+    { "action": "shell", "resource": "git ls-remote *", "effect": "allow" },
     { "action": "shell", "resource": "git rev-parse *", "effect": "allow" },
+    { "action": "shell", "resource": "git check-ignore *", "effect": "allow" },
     // opencode
     { "action": "shell", "resource": "opencode --version", "effect": "allow" },
     // pdfs
@@ -73,6 +81,7 @@
     { "action": "shell", "resource": "strings *", "effect": "allow" },
     { "action": "shell", "resource": "diff *", "effect": "allow" },
     { "action": "shell", "resource": "printf *", "effect": "allow" },
+    { "action": "shell", "resource": "cut *", "effect": "allow" },
     // dangerous stuff
     { "action": "shell", "resource": "awk *", "effect": "allow" },
     { "action": "shell", "resource": "find *", "effect": "allow" },
