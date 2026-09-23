@@ -1,6 +1,9 @@
 " Enable line numbering
 set number
 
+" Make the width of the number auto-expand
+set numberwidth=1
+
 " Show the active mode
 set showmode
 
