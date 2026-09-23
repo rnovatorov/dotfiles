@@ -108,6 +108,10 @@ noremap <Leader>fc :Rg<Cr>
 noremap <Leader>tt :NERDTreeToggle<Cr>
 noremap <Leader>tf :NERDTreeFind<Cr>
 
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeWinSize = 40
+
 " Configure GitGutter
 let g:gitgutter_map_keys = 0
 noremap <Leader>hn :GitGutterNextHunk<Cr>
