@@ -30,9 +30,6 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 
-" Set CursorHold event trigger timeout
-set updatetime=100
-
 " Fix broken auto-indent of comments
 :set indentkeys-=0#
 
