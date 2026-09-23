@@ -108,7 +108,7 @@ noremap <Leader>hp :Gitsigns prev_hunk<Cr>
 noremap <Leader>hu :Gitsigns undo_stage_hunk<Cr>
 noremap <Leader>hr :Gitsigns reset_hunk<Cr>
 noremap <Leader>hs :Gitsigns stage_hunk<Cr>
-noremap <Leader>hP :Gitsigns preview_hunk<Cr>
+noremap <Leader>hv :Gitsigns preview_hunk<Cr>
 
 " Confiure ALE
 let g:ale_pattern_options = {
