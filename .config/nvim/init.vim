@@ -56,6 +56,9 @@ colorscheme vim
 " No highlighting for sign column
 highlight SignColumn none
 
+" Always show signcolumn
+set signcolumn=yes
+
 " Hide end-of-buffer tildes
 set fillchars+=eob:\ 
 
