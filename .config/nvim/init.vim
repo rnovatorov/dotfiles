@@ -87,7 +87,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -99,19 +99,12 @@ noremap <Leader>fc :Rg<Cr>
 noremap <Leader>tt :NERDTreeToggle<Cr>
 noremap <Leader>tf :NERDTreeFind<Cr>
 
-" Configure Gitsigns
-lua << EOF
-local ok, gitsigns = pcall(require, 'gitsigns')
-if ok then
-  gitsigns.setup()
-end
-EOF
-noremap <Leader>hn :Gitsigns next_hunk<Cr>
-noremap <Leader>hp :Gitsigns prev_hunk<Cr>
-noremap <Leader>hu :Gitsigns undo_stage_hunk<Cr>
-noremap <Leader>hr :Gitsigns reset_hunk<Cr>
-noremap <Leader>hs :Gitsigns stage_hunk<Cr>
-noremap <Leader>hP :Gitsigns preview_hunk<Cr>
+" Configure GitGutter
+let g:gitgutter_map_keys = 0
+noremap <Leader>hn :GitGutterNextHunk<Cr>
+noremap <Leader>hp :GitGutterPrevHunk<Cr>
+noremap <Leader>hu :GitGutterUndoHunk<Cr>
+noremap <Leader>hs :GitGutterStageHunk<Cr>
 
 " Confiure ALE
 let g:ale_pattern_options = {
