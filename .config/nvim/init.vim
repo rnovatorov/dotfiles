@@ -56,8 +56,11 @@ colorscheme vim
 " No highlighting for sign column
 highlight SignColumn none
 
-" Use spaces as vertical separator fill chars
-set fillchars-=vert:\| | set fillchars+=vert:\ 
+" Hide end-of-buffer tildes
+set fillchars+=eob:\ 
+
+" Make only the last window have a status line
+set laststatus=3
 
 " Set map leader
 let mapleader = ","
