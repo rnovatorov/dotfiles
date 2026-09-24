@@ -1,0 +1,4 @@
+#!/bin/bash
+port=8080
+chromium --no-first-run http://127.0.0.1:$port &
+exec ssh -N -L $port:127.0.0.1:80 wr3000h

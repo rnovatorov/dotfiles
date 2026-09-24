@@ -1,0 +1,4 @@
+#!/bin/bash
+port=5000
+chromium --proxy-server=socks5://127.0.0.1:$port --user-data-dir="$(mktemp -d)" http://192.168.0.1 &
+exec ssh -N -D $port wr3000h
