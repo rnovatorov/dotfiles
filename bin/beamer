@@ -1,0 +1,7 @@
+#!/bin/bash
+case "$1" in
+  on)  cmd=--image-view-on ;;
+  off) cmd=--standby ;;
+  *)   echo "Usage: $0 on|off" >&2; exit 1 ;;
+esac
+ssh raspberrypi "cec-ctl -d /dev/cec0 -s --playback >/dev/null && cec-ctl -d /dev/cec0 -s --to 0 $cmd"
