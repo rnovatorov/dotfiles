@@ -1,3 +1,4 @@
-Less is more.
-
-Code lives in `~/code`. Clone new repos there.
+- Less is more.
+- Code lives in `~/code`. Clone new repos there.
+- Never leak secrets to the transcript. Redact output before printing.
+- Decisions are mine.
