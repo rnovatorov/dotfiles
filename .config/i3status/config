@@ -18,6 +18,7 @@ order += "volume master"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "ethernet tun0"
+order += "ethernet wg-protonvpn"
 order += "path_exists google-drive"
 order += "cpu_usage"
 order += "cpu_temperature 0"
@@ -44,8 +45,13 @@ ethernet _first_ {
 }
 
 ethernet tun0 {
-        format_up = "Tun: %ip"
-        format_down = "Tun: down"
+        format_up = "OVPN: %ip"
+        format_down = "OVPN: down"
+}
+
+ethernet wg-protonvpn {
+        format_up = "WG: %ip"
+        format_down = "WG: down"
 }
 
 path_exists google-drive {
