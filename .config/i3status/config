@@ -17,8 +17,8 @@ general {
 order += "volume master"
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "ethernet tun0"
-order += "ethernet wg-protonvpn"
+order += "ethernet wg-protonvpn-de"
+order += "ethernet wg-novatorov-de"
 order += "path_exists google-drive"
 order += "cpu_usage"
 order += "cpu_temperature 0"
@@ -35,8 +35,8 @@ volume master {
 }
 
 wireless _first_ {
-        format_up = "WiFi: %ip"
-        format_down = "WiFi: down"
+        format_up = "Wi-Fi: %ip"
+        format_down = "Wi-Fi: down"
 }
 
 ethernet _first_ {
@@ -44,19 +44,19 @@ ethernet _first_ {
         format_down = "Eth: down"
 }
 
-ethernet tun0 {
-        format_up = "OVPN: %ip"
-        format_down = "OVPN: down"
+ethernet wg-protonvpn-de {
+        format_up = "WG-1: %ip"
+        format_down = "WG-1: down"
 }
 
-ethernet wg-protonvpn {
-        format_up = "WG: %ip"
-        format_down = "WG: down"
+ethernet wg-novatorov-de {
+        format_up = "WG-2: %ip"
+        format_down = "WG-2: down"
 }
 
 path_exists google-drive {
 	path = "/home/rnovatorov/google-drive/.mounted"
-        format = "%title: %status"
+        format = "G-Drive: %status"
 }
 
 cpu_usage {
